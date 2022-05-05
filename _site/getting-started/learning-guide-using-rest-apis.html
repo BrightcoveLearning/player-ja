@@ -658,7 +658,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><strong>REST API </strong> :Brightcoveは、Brightcove プラットフォームをカスタマイズ、拡張、統合するための包括的な API セットを提供しています。<a href="https://apis.support.brightcove.com/getting-started/getting-started-brightcove-apis.html">概要を参照してください。詳細については、ビデオクラウド API </a>ドキュメントを参照してください。</li>
     </ul>
     <p>次の図は、Brightcoveの REST API の 1 つからデータを取得するための、プロセスの 3 つのコアエンティティ間の相互作用を示しています。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Basic Pieces Overview" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/client-proxy-api.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Basic Pieces Overview" src="/assets/images/architecture/proxy-API-call/client-proxy-api.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="Client_functionality_overview">クライアント機能の概要</h2>
@@ -677,7 +677,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>データをクライアントに戻すプロキシ。</li>
     </ul>
     <p>呼び出すボックス<code translate="No">makeRequest()</code>（左下のボックス）からの論理フロー矢印は、コードが2つの異なる時間に実行されていることを示しているように見えます。これはまさにそうです。関数の呼び出しは行われますが、コールバック関数は、がジョブを実行し、<code translate="No">makeRequest()</code>コールバック関数が実行されるまで実行されません。コールバック関数は、要求されたデータを関数呼び出しコードに返します。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Client functionality overview" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/proxy-API-call.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Client functionality overview" src="/assets/images/architecture/proxy-API-call/proxy-API-call.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="Example_code_walkthrough">サンプルコードチュートリアル</h2>
@@ -748,7 +748,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>このコードセクションでは、<code translate="No">makeRequest()</code>関数の呼び出しを行います。2 つのパラメータが渡されることに注意してください。1 つ目はエンドポイントの情報を保持するオプションオブジェクトで、2 つ目はコールバック関数です。これは非同期呼び出しであるため、匿名で定義されたコールバック関数は、データがREST <code translate="No">makeRequest()</code> APIによって関数に返されるまでは呼び出されません。</p>
     <ul>
       <li>1 行目:<code translate="No">makeRequest()</code>関数を呼び出し、<code translate="No">options</code>オブジェクト内の呼び出しに必要な値を渡します。この場合、オブジェクトには次のものが含まれます。
-        <figure class="bcls-figure"><img class="bcls-image" alt="options object" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/options-object-console.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="options object" src="/assets/images/architecture/proxy-API-call/options-object-console.png" /></figure>
       </li>
       <li>3～13行目:コールバック関数は、無名関数として定義されます (黄色で強調表示)。この関数はパラメータであり、ここでは呼び出されず、後でコード内で呼び出されることに注意してください。</li>
       <li>6、8、10 行目: <code translate="No">console.log()</code>次のステートメントが表示されます。
@@ -761,7 +761,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>12行目:コントロールバーのビュー数を表示する関数を呼び出します。</li>
     </ul>
     <p>コンソールからの次のスクリーンショットは、<code translate="No">console.log</code>ステートメントから実際に表示されているデータを示しています。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="Processing of data in callback function" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/console-data-process-callback-function.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Processing of data in callback function" src="/assets/images/architecture/proxy-API-call/console-data-process-callback-function.png" /></figure>
     <pre class="line-numbers">
 	<code class="language-javascript" translate="No">// +++ Make the request to the <span translate="No">Analytics API</span> +++
 	// Extract views from data returned by Analytics API
@@ -823,7 +823,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>8行目、26行目:<code translate="No">readyState</code>変更のためのイベントハンドラ関数を定義します。</li>
       <li>9、23、25 行目:要求が高レベルで失敗した場合は、を使用します。<code translate="No">try-catch</code></li>
       <li>10、11 行目:<code translate="No">if</code>ステートメントを使用して、リクエストが完了し（<code translate="No">readyState</code> 4）、正常に完了し、ステータスが 200 の範囲内にあることを確認します。以下に、のコンソールログを示します。<code translate="No">readyState</code>そして<code translate="No">status</code>イベントハンドラー定義の値：
-        <figure class="bcls-figure"><img class="bcls-image" alt="Logging readyState and status" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/console-readystate-and-status.png" /></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="Logging readyState and status" src="/assets/images/architecture/proxy-API-call/console-readystate-and-status.png" /></figure>
       </li>
       <li>18行目:コールバック関数が実行されます。上記の「<strong> call makeRequest () </strong>」セクションで説明したように、API から返されたデータをコールバック関数に渡します。</li>
       <li>33行目です:イベントのイベントハンドラを設定します<code translate="No">XMLHttpRequest.onreadystatechange</code>。</li>
@@ -907,7 +907,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>このセクションでは、いくつかの簡単な提案を行い、デバッグの冒険を開始するのに最適な場所です。次の 2 つのセクションでは、必要な最も基本的な情報、呼び出しを行うために渡されるもの、返される内容を確認する方法を紹介します。</p>
     <h3>通話オプションの確認</h3>
     <p>このドキュメントで説明するクライアントサイドコードは、基本的にプロキシで使用する正しいオプションを提供することと、実際の API に関するものです。したがって、オプションが正しいことを知ることは、コードの正しい機能に不可欠です。これを行う簡単な方法は、オブジェクトが使用される<code translate="No">options</code>関数に渡される直前に、<code translate="No">makeRequest</code>オブジェクトをコンソールに記録することです。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="debugging code log options" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/debugging-code-log-options.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="debugging code log options" src="/assets/images/architecture/proxy-API-call/debugging-code-log-options.png" /></figure>
     <p>オプションオブジェクトに何が含まれているかは、あなたがしようとしていることによって異なりますが、いくつかの基本は常にそこにあります。</p>
     <ul>
       <li>アカウント ID。これは、別のプロパティ、または API エンドポイント URL の一部にすることができます。</li>
@@ -921,17 +921,17 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
     </ul>
     <p>API リクエストによっては、オプションオブジェクトでその他のプロパティが必要になる場合があります。以下に、特定のアカウントのすべてのプレイヤーにリクエストを送信するためのオプションオブジェクトのログ記録時にコンソールに表示される内容の例を示します。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="debugging options simple" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/debugging-options-simple.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="debugging options simple" src="/assets/images/architecture/proxy-API-call/debugging-options-simple.png" /></figure>
     <p>プレイヤーを更新するときに使用されるもう少し複雑なログオプションオブジェクトは次のとおりです。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="debugging options" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/debugging-options.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="debugging options" src="/assets/images/architecture/proxy-API-call/debugging-options.png" /></figure>
     <h3>返されたデータの表示</h3>
     <p>返される内容は、リクエストしたデータと、エラーが返されたかどうかによって異なります。しかし、返されたデータが何であっても、返されるデータを確認することが最も多いでしょう。これを行う簡単な方法は、<code translate="No">response</code><code translate="No">makeRequest</code>関数を呼び出した直後に生データをコンソールに記録することです。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="debugging code log options" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/debugging-code-log-response.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="debugging code log options" src="/assets/images/architecture/proxy-API-call/debugging-code-log-response.png" /></figure>
     <p>返されるものは、ほぼ無限の可能性がありますが、以下はいくつかの例です。最初の画面は、アカウント内のすべてのプレイヤーを尋ねたときの応答の開始を示します。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="debugging response on players request" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/debugging-response-multiple-players.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="debugging response on players request" src="/assets/images/architecture/proxy-API-call/debugging-response-multiple-players.png" /></figure>
     <aside class="bcls-aside bcls-aside--tip">これは、応答を表示すると、プレーヤー情報が次の名前の配列に格納されていることを示すため、非常に役立つ場合がある良い例です。<code translate="No">items</code>。</aside>
     <p><code translate="No">PATCH</code> HTTPメソッドを使用して、プレーヤーを更新した後の応答は次のとおりです。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="debugging response on player patch" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/debugging-response-on-player-patch.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="debugging response on player patch" src="/assets/images/architecture/proxy-API-call/debugging-response-on-player-patch.png" /></figure>
     <p>最初の応答のデータのよりきれいにフォーマットされたビューは次のとおりです。</p>
     <pre class="line-numbers">
 	<code class="language-json" translate="No">{
@@ -941,7 +941,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 		"preview_embed_code": "&lt;iframe src='//preview-players.brightcove.net/v2/accounts/.../master/index.html' ...&gt;&lt;/iframe&gt;"
 	}</code></pre>
     <p>最後に、エラーが発生したときからの非常に貴重な応答がここにあります。この場合、アカウントは適切な資格情報なしで使用されています。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="debugging response on error" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/proxy-API-call/debugging-response-on-error.png" /></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="debugging response on error" src="/assets/images/architecture/proxy-API-call/debugging-response-on-error.png" /></figure>
   </section>
   <h3>その他のトラブルシューティングのヒント</h3>
   <p>あなたが問題を抱えている場合は、ここで探すべきいくつかの他のものがあります。</p>
