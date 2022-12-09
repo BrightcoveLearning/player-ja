@@ -51,8 +51,8 @@
   name: '参考文献'
   url: '/references/index.html'
   docs:
-    - name: Brightcoveプレーヤ 5 から 6 への移行ガイド
-      url: /references/brightcove-player-5-6-migration-guide.html
+    - name: Brightcove Player 7 Migration Guide
+      url: /references/bcp7-migration-guide.html
     - name: ブライトコーブプレイヤー API ドキュメント
       url: /brightcove-player/current-release/index.html
     - name: Brightcove Playerクッキー
