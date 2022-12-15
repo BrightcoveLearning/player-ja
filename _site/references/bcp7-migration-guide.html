@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex,nofollow"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn about the new improvements and features with the major version release for Brightcove Player 7.">
+  <meta name="description" content="このトピックでは、Brightcove Player 7のメジャーバージョン リリースに伴う改善点と新しい機能について説明します。">
   
-  <title>Brightcove Player 7 Migration Guide</title>
+  <title>Brightcove Player 7 移行ガイド</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -58,7 +58,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         
       <li class="breadcrumb-item"><a href="/references/">References</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">Brightcove Player 7 Migration Guide</li>
+      <li class="breadcrumb-item active" aria-current="page">Brightcove Player 7 移行ガイド</li>
     </ol>
   </nav>
 </header>
@@ -631,12 +631,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 <!-- open in new tab/window -->
 <a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a> 
-<h1>Brightcove Player 7 Migration Guide</h1>
+<h1>Brightcove Player 7 移行ガイド</h1>
 <article class="bcls-article">
-    <summary>In this topic, you will learn about the new improvements and features with the major version release for Brightcove Player 7.</summary>
+    <summary>このトピックでは、Brightcove Player 7のメジャーバージョン リリースに伴う改善点と新しい機能について説明します。</summary>
 
     <section class="bcls-section">
-      <h2 id="Introduction">Introduction</h2>
+      <h2 id="Introduction">イントロダクション</h2>
       <p>バージョン 7 は、Brightcove Playerの次のメジャー バージョン リリースで、2022 年 10 月に提供されます。プレーヤーの変更および改善点には、Video.js 8 および VHS (Video.js HTTP Streaming) 3 が含まれます。 </p>
       <p>機能・改善点は以下の通りになります:</p>
       <ul>
@@ -693,7 +693,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </tbody>
       </table>
       <p>以下の注記は上表を参照しています。</p>
-      <p id="n1"><sup>[1]</sup> iPadOSとiOSでは、Safariブラウザエンジンのみが許可されています。ChromeやFirefox、Edgeなどの代替ブラウザは、Safariを内部で使用しています。この場合ブラウザの動作は、実際のバージョンと一致しません。.</p>
+      <p id="n1"><sup>[1]</sup> iPadOSとiOSでは、Safariブラウザエンジンのみが許可されています。ChromeやFirefox、Edgeなどの代替ブラウザは、Safariを内部で使用しています。この場合ブラウザの動作は、実際のバージョンと一致しません。</p>
 
       <h3>Internet Explorer 11</h3>
       <p>2021 年 6 月 15 日およびBrightcove Player 6.56.0 の時点で IE11 の公式サポートを終了しました。この時点以降、 IE ブラウザに積極的に介入しないようにしてきました。これはプレーヤー 7 には当てはまりません。</p>
@@ -711,7 +711,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </ul>
 
       <h3>本ガイドにおける対象外</h3>
-      <p>このガイドでは、Brightcove Player 7 のユーザー向けの変更点のみを取り上げていることにご留意ください。</p>
+      <p>このガイドでは、Brightcove Player 7 のユーザー向けの変更点のみを取り上げていることに、ご留意ください。</p>
       <p>当社のエンジニアが今後のプレーヤーの開発を容易にするための、コード構成に関連する重要な内部変更については説明いたしません。Brightcove Player が、10 年近く継続的に開発された後でも、業界をリードする Web 動画プレーヤであり続けていることを非常に誇りに思います。</p>    
     </section>
 
@@ -895,7 +895,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <aside class="bcls-aside bcls-aside--tip">移行は不要です - アップグレード後 <code translate="No">play_request</code> のメトリックが低下する可能性があることをご了承ください。</aside>
       <p>Brightcove Player 7 は、視聴者が再生ボタンを押すか、何らかの方法で自動再生(つまり、<code translate="No">play()</code> メソッドの呼び出し) を介して、再生を開始する要求が最初にあった時のみ、<code translate="No">play_request</code> ビーコンを送信します。</p>
       <p>以前のバージョンでは、プレーヤーの <code translate="No">play</code> イベントが発生する度に <code translate="No">play_request</code> ビーコンを送信していました。 これには、視聴者が一時停止して再開したり、クライアントサイドの広告が終了してコンテンツの再生に戻ったりするなど、コンテンツの再生が要求されたときが含まれます。</p>
-      <p>弊社、製品部門とデータ部門はこれについて話し合い、このイベントの目的は、再生を開始する最初のリクエストを追跡することであると判断しました。これは、play_request メトリクスを追跡している人は、Player 7 にアップグレードした後にその数値が低下する可能性が高いことを意味します。この現象が発生しても、それは問題があることを示している事ではありません。</p>
+      <p>弊社、製品部門とデータ部門はこれについて話し合い、このイベントの目的は、再生を開始する最初のリクエストを追跡することであると判断しました。これは、play_request メトリックを追跡している人は、Player 7 にアップグレードした後にその数値が低下する可能性が高いことを意味します。この現象が発生しても、それは問題があることを示している訳ではありません。</p>
 
       <h3>タイムアウト エラーの機能強化</h3>
       <p>変更は、BCP7に適用されます。</p>
@@ -907,7 +907,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
       <h3>サポート対象外のブラウザ UI</h3>
       <p>変更は、BCP7に適用されます。</p>
-      <aside class="bcls-aside bcls-aside--tip">移行は不要です - プレーヤーに含まれる外部コードでエラーが発生する場合を除き</aside>
+      <aside class="bcls-aside bcls-aside--tip">移行は不要です - プレーヤーに含まれる外部コードでエラーが発生する場合を除く。</aside>
       <p>Player 6では、サポートされていないブラウザで読み込まれた場合、エラーが発生し、ブラウザのコンソールに記録される可能性が高いですが、視聴者には何も表示されません。</p>
       <p>Player 7では、このようなケースをより明確にするために、新しいUIが用意されています。サポートされていないブラウザでプレーヤーを読み込むと、次のようなメッセージが表示されます。: </p>
       <figure class="bcls-figure">
@@ -979,7 +979,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <p>VHS と Brightcove Player が使用する ABR アルゴリズムは、より高いビットレート選択を維持しながら、再バッファリング イベントを減らすことを目標に改良されています。これは、最新の帯域幅推定値だけでなく、移動平均帯域幅推定値を使用することで実現されています。</p>
       <p>さらに、低レンディションに切り替えるために、バッファリングされた高画質コンテンツを破棄しないように、レンディション切り替えのタイミングを工夫することで、帯域幅の使用を最適化することを目指しています。</p>
       <p>これらの調整の背景にある考え方については、こちらの <a href="https://gist.github.com/gesinger/8aa3608278b3c398fe8dc5facf57eb3e">GitHub Gist</a> で、最終的な実装についてはこちらの <a href="https://github.com/videojs/http-streaming/pull/886">GitHub pull request</a>でご覧頂けます。</p>
-      <p>ABRアルゴリズムについて詳しくは、<a href="https://player.support.brightcove.com/playback/determining-which-rendition-will-play.html">Determining Which Rendition Will Play</a> のドキュメントをご覧下さい。</p>
+      <p>ABRアルゴリズムについて詳しくは、<a href="https://player.support.brightcove.com/playback/determining-which-rendition-will-play.html">再生するレンディションの決定</a> のドキュメントをご覧下さい。</p>
 
       <h3><code translate="No">sourceset</code> イベント </h3>
       <p>変更は、VJS8/BCP7に適用されます。</p>
@@ -1005,8 +1005,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <h4>Video Cloud ご利用のお客様</h4>
       <p>プレーヤが Playback API を介して Video Cloud と統合されている場合、<code translate="No">TitleBar</code> は、自動的に入力されます。</p>
 
-      <h4>Playerのみのお客様</h4>
-      <p>プレーヤーのみのお客様は、次のいずれかの方法を使用して、 <code translate="No">TitleBar</code> を設定できます:</p>
+      <h4>Playerのみご利用のお客様</h4>
+      <p>プレーヤーのみご利用されているお客様は、次のいずれかの方法を使用して、 <code translate="No">TitleBar</code> を設定できます:</p>
       <ul>
         <li>
           <p><strong><code translate="No">loadMedia</code> を使用して <code translate="No">TitleBar</code>を設定します。</strong></p>
@@ -1025,7 +1025,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     type: &apos;video/webm&apos;
   }]
 })</code></pre>
-          <p><code translate="No">loadMedia</code> メソッドに馴染みのない場合、これはsrcメソッドだけで利用できるもの以外に、メディアに追加のメタデータを提供する方法になります。 上記の例では、タイトルと説明が提供され、タイトルバーの表示に使用されています。</p>
+          <p><code translate="No">loadMedia</code> メソッドに馴染みのない場合、これはsrcメソッドだけで利用できるもの以外に、メディアに追加のメタデータを提供する方法になります。 上記の例では、タイトルと説明が提供され、TitleBarの表示に使用されています。</p>
         </li>
         <li>
           <p><strong><code translate="No">TitleBar</code> を直接設定する</strong></p>
@@ -1044,12 +1044,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </ul>
       <h4>Brightcove Playerの移行</h4>
       <p>大部分のBrightcoveのお客様に、この移行は必要ないと思われます。</p>
-      <p>ただし、<code translate="No">player.dock</code> に依存するサードパーティのコードは、 <strong>Playerのみのお客様</strong>のセクションで述べたように <code translate="No">TitleBar</code> のAPIを使用するように更新する必要がある可能性があります。</p>
+      <p>ただし、<code translate="No">player.dock</code> に依存するサードパーティのコードは、 <strong>Playerのみご利用のお客様</strong>のセクションで述べたように <code translate="No">TitleBar</code> のAPIを使用するように更新する必要がある可能性があります。</p>
 
       <h3>Video.jsのユーティリティ・オブジェクト</h3>
       <p>変更は、VJS8/VHS3/BCP7に適用されます。</p>
       <aside class="bcls-aside bcls-aside--tip">移行は必要ありませんが、非推奨の関数の使用する場合、これらの新しいオブジェクトにアタッチされた関数または <code translate="No">player.brightcove.util</code> 関数を使用するにように更新する必要があります。</aside>
-      <p>時間が経つにつれ、<code translate="No">videojs</code> 名前空間は、多種多様なユーティリティ関数で乱雑になってきました。Brightcoveは、これらのユーティリティ関数に対して、より意図的に設計されたインタフェースを導入しています。</p>
+      <p>時間が経つにつれ、<code translate="No">videojs</code> 名前空間は、多種多様なユーティリティ関数で煩雑になってきました。Brightcoveは、これらのユーティリティ関数に対して、より意図的に設計されたインタフェースを導入しています。</p>
       <p>ここでの原則は、もしある関数がライブラリーの中心的な部分とは思えないが、それでも潜在的に有用であるならば、トップレベルの関数ではなく、ユーティリティオブジェクトの一部として公開するというものでした。</p>
       <p>8.0.0 <code translate="No">videojs</code> に付属するユーティリティオブジェクトは次の通りです:</p>
       <table class="bcls-table">
@@ -1126,7 +1126,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <p>変更は、VHS3に適用されます。</p>
       <ul>
         <li>
-          <p>ギャップは、スキップする前にギャップの間を待つのではなく、即座に検出されます。</p> 
+          <p>ギャップは、スキップする前にギャップの間、待つのではなく、即座に検出されます。</p> 
         </li>
         <li>
           <p>非推奨の <code translate="No">smoothQualityChange</code> メソッドを削除しました。</p> 
@@ -1155,7 +1155,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <h3>トップレベルのユーティリティ関数</h3>
       <p>この変更は、VJS8/VHS3/BCP7に適用されます。</p>
       <aside class="bcls-aside bcls-aside--tip">移行は必要ありませんが、非推奨の関数の使用は、新しい Video.js ユーティリティ オブジェクトまたは  <code translate="No">player.brightcove.util</code>  関数に付属する関数を使用するように更新する必要があります。</aside>
-      <p>時間が経つにつれ、 <code translate="No">videojs</code> 名前空間は、多種多様なユーティリティ関数で乱雑になってきました。 Brightcoveは、 <code translate="No">videojs</code> APIをよりよく整理するために、ユーティリティ オブジェクトを公開するという新しい組織原則を導入しました。</p>
+      <p>時間が経つにつれ、 <code translate="No">videojs</code> 名前空間は、多種多様なユーティリティ関数で煩雑になってきました。 Brightcoveは、 <code translate="No">videojs</code> APIをよりよく整理するために、ユーティリティ オブジェクトを公開するという新しい組織原則を導入しました。</p>
       <p>その結果、多くのトップレベル関数が非推奨となりました。これらの各関数は、最初に使用された時に警告を記録するようになりました (ブラウザのコンソールが煩雑にならないように、一度だけです)。</p>
 
       <aside class="bcls-aside bcls-aside--warning">以下の 2 つの表にある非推奨の関数は、Video.js 9 および Brightcove Player 8 ですべて削除される予定です。</aside>
@@ -1281,8 +1281,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </section>
 
     <section class="bcls-section">
-      <h2 id="Removals">削除</h2>
-      <p>このセクションにあるものは、以前サポートされていたもののサポートが完全に終了していることを示します。事前に非推奨とすることなくサポートを終了することを避けるようにしておりますが、将来にわたって製品を保守し続けるためには、時にこのようなことが必要な場合がございます。</p>
+      <h2 id="Removals">サポート終了</h2>
+      <p>このセクションにあるものは、以前サポートされていたもののサポートが完全に終了していることを示します。事前に非推奨とすることなくサポートを終了することを避けるようにしておりますが、将来にわたって製品を保守し続けるためには、時にこのようなことが必要な場合がございます。ご了承下さい。</p>
 
       <h3>Graphite Skin</h3>
       <p>変更は、BCP7に適用されます。</p>
@@ -1317,7 +1317,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </ul>
       <p>ただし、Brightcove Playlist UI プラグインには影響がありませんでした。</p>
       <h4>移行</h4>
-      <p>プレイリストの移行経路は、常に Brightcove Playlist UI プラグインを使用することであり、これは Studio から設定可能です。旧来のトップレベル設定は、Studioを通じて公開されたことはありません。</p>
+      <p>プレイリストの移行経路は、常に Brightcove Playlist UI プラグインを使用することであり、これは Studio から設定可能です。従来のトップレベル設定は、Studioを通じて公開されたことはありません。</p>
 
       <h3><code translate="No">videojs.extend()</code> 関数</h3>
       <p>変更は、VJS8/BCP7に適用されます。</p>
@@ -1360,7 +1360,7 @@ player.on(&apos;sourceset&apos;, () =&gt; {
   player.one(&apos;play&apos;, callback);
 });</code></pre>
 
-      <h3>その他の削除</h3>
+      <h3>その他のサポート終了</h3>
       <ul>
         <li>[BCP7] <code translate="No">fullscreenControl</code> および <code translate="No">techOrder</code> JSONコンフィグがサポートされなくなりました。代わりに、それぞれ <code translate="No">fullscreen_control</code> と <code translate="No">tech_order</code> 使用して下さい。</li>
         <li>[VJS8] <code translate="No">createEl</code> メソッドのprops引数で、<code translate="No">aria-*</code>、<code translate="No">role</code>、<code translate="No">type</code> 属性を設定する機能を削除しました。</li>
