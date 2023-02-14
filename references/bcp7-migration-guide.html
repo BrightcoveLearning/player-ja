@@ -10,7 +10,7 @@ layout: staging
 
     <section class="bcls-section">
       <h2 id="Introduction">イントロダクション</h2>
-      <p>バージョン 7 は、Brightcove Playerの次のメジャー バージョン リリースで、2022 年 10 月に提供されます。プレーヤーの変更および改善点には、Video.js 8 および VHS (Video.js HTTP Streaming) 3 が含まれます。 </p>
+      <p>バージョン 7 は、Brightcove Playerの最新のメジャー バージョン リリースです。プレーヤーの変更および改善点には、Video.js 8 および VHS (Video.js HTTP Streaming) 3つが含まれます。 </p>
       <p>機能・改善点は以下の通りになります:</p>
       <ul>
         <li>最新のブラウザに対応したデザイン</li>
@@ -25,9 +25,45 @@ layout: staging
         <li>新しいデフォルト レイアウト</li>
         <li>プレーヤーの挙動の改善</li>
       </ul>
-      <p>弊社、Brightcove Player が業界をリードする Web ビデオプレーヤであり続けていることを非常に誇りに思っています。</p>
-      <aside class="bcls-aside bcls-aside--information">ブライトコーブは、プレーヤーを新しいメジャーバージョンに自動動的にアップグレードすることは <strong>ありません</strong>。</aside>
-      <aside class="bcls-aside bcls-aside--warning">品質セレクター コントロールは現在Brightcove Player 7との互換性がないため、削除する必要があります。修正は間もなく展開される予定です。</aside>
+      <p>弊社、Brightcove Player が業界をリードする Web ビデオプレーヤであり続けていることを非常に誇りに思っています。概要については<a href="https://www.brightcove.com/en/resources/blog/great-online-video-player/">What Makes a Great Online Video Player? Announcing Brightcove's Player v7</a>をご覧ください。</p>
+      <aside class="bcls-aside bcls-aside--tip">ブライトコーブは、プレーヤーを新しいメジャーバージョンに自動動的にアップグレードすることは <strong>ありません</strong>。</aside>
+      <aside class="bcls-aside bcls-aside--information">注：
+        <ul>
+          <li>品質セレクター コントロールは、Brightcove Player 7リリース7.1.0以降でサポートされています。</li>
+          <li>Brightcove Player7を使用する際は <a href="#Limitations">制限</a> をご確認下さい。</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="bcls-section">
+      <h2 id="Upgrade_to_version_7">バージョン7へのアップグレード</h2>
+      <p>Brightcove Player 7.0.0 が利用可能になりました。既存のプレーヤーはこのバージョンに自動更新されませんが、スタジオでプレーヤーをアップグレードすることができます。</p>
+      <ol class="bcls-tasklist">
+        <li>Video Cloud スタジオで、<strong>Players</strong> モジュールに移動します。</li>
+        <li>
+          <p>新規プレーヤーを作成するか、既存のプレーヤーを開きます。</p>
+          <figure class="bcls-figure">
+            <img class="bcls-image--no-border" alt="Player information" src="/assets/images/references/bcp7/player-information.webp" />
+          </figure>
+        </li>
+        <li><strong>プレーヤー情報</strong> セクションにて、<strong>プレーヤーのバージョン</strong>までスクロールします。</li>
+        <li>
+          <ol>
+            <li><strong>更新モード</strong> が <strong>自動</strong> に設定されていることを確認して下さい。詳しくは<a href="#Limitations">制限事項</a>をご覧下さい。</li>
+            <li><strong>Upgrade to Brightcove Player 7</strong>をクリックします。</li>
+            <li><strong>保存</strong>をクリックします。</li>
+            <li><strong>公開と埋込み</strong>をクリックします。</li>
+          </ol>
+          <figure class="bcls-figure">
+            <img class="bcls-image--no-border" alt="Upgrade to player 7" src="/assets/images/references/bcp7/player-version-7.webp" />
+          </figure>
+        </li> 
+        <li><strong>変更の公開</strong>、<strong>閉じる</strong>の順にクリックします。</li>
+      </ol>
+      <aside class="bcls-aside bcls-aside--information"><p>上記の手順でプレーヤーをアップグレードした場合、プラグインのバージョンは正しく設定されているはずです。</p>
+        <p>JSONエディターを使用して手動でプレーヤーを更新している場合、プラグインのバージョンについては、<a href="#Plugins">プラグイン</a> セクションを参照してください。</p></aside>
+
+      <!-- <div style="position: relative; display: block; max-width: 624px;"><div style="padding-top: 56.25%;"><iframe src="https://players.brightcove.net/6225316964001/Qznf2bKtV_default/index.html?videoId=6316422161112" allowfullscreen="" allow="encrypted-media" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></iframe></div></div> -->
     </section>
 
     <section class="bcls-section">
@@ -263,13 +299,6 @@ layout: staging
       <p>これにより、メディア コンテンツで DRM 保護を有効にするだけで、DRM を簡単に設定できます。プレーヤーでも有効にする必要はありません。</p>
       <p>移行は必要ありません。 DRM プラグインと Player 7 で構成されたプレーヤーは壊れることはありません。</p>
 
-      <h3>Analytics <code translate="No">play_request</code> イベント</h3>
-      <p>変更は、BCP7に適用されます。</p>
-      <aside class="bcls-aside bcls-aside--tip">移行は不要です - アップグレード後 <code translate="No">play_request</code> のメトリックが低下する可能性があることをご了承ください。</aside>
-      <p>Brightcove Player 7 は、視聴者が再生ボタンを押すか、何らかの方法で自動再生(つまり、<code translate="No">play()</code> メソッドの呼び出し) を介して、再生を開始する要求が最初にあった時のみ、<code translate="No">play_request</code> ビーコンを送信します。</p>
-      <p>以前のバージョンでは、プレーヤーの <code translate="No">play</code> イベントが発生する度に <code translate="No">play_request</code> ビーコンを送信していました。 これには、視聴者が一時停止して再開したり、クライアントサイドの広告が終了してコンテンツの再生に戻ったりするなど、コンテンツの再生が要求されたときが含まれます。</p>
-      <p>弊社、製品部門とデータ部門はこれについて話し合い、このイベントの目的は、再生を開始する最初のリクエストを追跡することであると判断しました。これは、play_request メトリックを追跡している人は、Player 7 にアップグレードした後にその数値が低下する可能性が高いことを意味します。この現象が発生しても、それは問題があることを示している訳ではありません。</p>
-
       <h3>タイムアウト エラーの機能強化</h3>
       <p>変更は、BCP7に適用されます。</p>
       <aside class="bcls-aside bcls-aside--tip">移行は不要です。</aside>
@@ -323,6 +352,23 @@ layout: staging
   // were sent to the Data Collection API.
   player.log(&apos;video_engagement beacon sent!&apos;, e.params);
 });</code></pre>
+
+<h3>Analytics <code translate="No">play_request</code> イベント</h3>
+<p>変更は、BCP7に適用されます。</p>
+<aside class="bcls-aside bcls-aside--tip">移行は必要ありません。 - しかし、アップグレード後 <code translate="No">play_request</code> のメトリックが低下する可能性があることをご了承ください。</aside>
+<p>Brightcove Player 7は、視聴者が再生ボタンを押すか、何らかの方法で自動再生する (例えば<code translate="No">play()</code> メソッドを呼び出す）ことにより、再生開始の要求が最初にあった場合にのみ、 <code translate="No">play_request</code> ビーコンを送信します。</p>
+<p>以前のバージョンでは、プレーヤーの  <code translate="No">play</code> イベントが発生すると、<code translate="No">play_request</code> ビーコンを送信していました。これには、視聴者が一時停止して再開したり、クライアントサイドの広告が終了してコンテンツの再生に戻ったりするなど、コンテンツの再生が要求される場合が含まれます。</p>
+<p>弊社、製品部門とデータ部門はこれについて話し合い、このイベントの目的は、再生を開始する最初のリクエストを追跡することであると判断しました。これは、play_request メトリックを追跡している人は、Player 7 にアップグレードした後にその数値が低下する可能性が高いことを意味します。この現象が発生しても、それは問題があることを示している訳ではありません。</p>
+
+<h3>プレーヤー <code translate="No">video_complete</code> イベント</h3> 
+<p>変更は、BCP7に適用されます。</p>
+<aside class="bcls-aside bcls-aside--tip"><code translate="No">video_complete</code> イベントを使用している場合、代わりに <code translate="No">ended</code> イベントを使用することができます。</aside>
+<p>Video Cloud analytics では、 <code translate="No">video_complete</code> イベントは使用されず、BCP7から削除されました。 つまり、次のようになります:</p>
+<ul>
+  <li><code translate="No">analytics-beacon-video-complete</code> イベントはありません。</li>
+  <li><code translate="No">params.event</code> に<code translate="No">video_complete</code> を指定した<code translate="No">analytics-beacon</code> イベントがない。</li>
+</ul>
+
 
       <h3>Brightcoveの名前空間</h3>
       <p>変更は、BCP7に適用されます。</p>
