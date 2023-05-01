@@ -1,0 +1,1618 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>HLS プラグインの変更履歴</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/learning-paths/learning-paths.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script translate="no">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
+  <script src="/assets/js/sajari-head.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/SVG/COVE004_Brightcove_Player_Logo_RGB_K.svg" alt="Brightcove" style="max-width: 200px;"></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Select Language</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script translate="no">
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><i data-feather="help-circle"></i> サポートに連絡する</a><span style="vertical-align: middle;margin-left:1em;margin-right:1em;">| </span><a href="https://status.brightcove.com/"><i data-feather="cloud"></i> システムステータス</a></span>
+    <br>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item first-item"><a href="/">ホーム</a></li>
+        
+      <li class="breadcrumb-item"><a href="/plugins/changelog/">Plugins</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">HLS プラグインの変更履歴</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-3 left-side-bar">
+				<select id="site_select" class="bcls-select" style="margin-left: 1rem;">
+					<option value="">ブライトコーブのその他のドキュメント</option>
+					 
+							<option value="https://support.brightcove.com">ドキュメンテーションホーム</option>
+						  
+							<option value="">-ビデオクラウド-</option>
+						  
+							<option value="https://studio.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドスタジオ</option>
+						  
+							<option value="https://player.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブプレイヤー開発</option>
+						  
+							<option value="https://apis.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドプラットフォームAPI</option>
+						  
+							<option value="https://sdks.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドデバイスSDK</option>
+						  
+							<option value="https://integrations.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;統合とCMSコネクタ</option>
+						  
+							<option value="https://general.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドの一般情報</option>
+						  
+							<option value="">-ビデオエッセンシャル-</option>
+						  
+							<option value="https://beacon.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブビーコン</option>
+						  
+							<option value="https://live.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブライブ</option>
+						  
+							<option value="https://zencoder.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp; Zencoder</option>
+						  
+							<option value="">-ビデオクラウドアドオン-</option>
+						  
+							<option value="https://campaign.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブキャンペーン</option>
+						  
+							<option value="https://engage.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブエンゲージ</option>
+						  
+							<option value="https://gallery.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブギャラリー</option>
+						  
+							<option value="https://studio.support.brightcove.com/social/index.html">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブソーシャル</option>
+						  
+							<option value="https://ssai.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブSSAI</option>
+						 
+				</select>
+        <nav class="sidenav" id="side_nav">
+           
+            <h5><a href="/index.html">ホーム</a></h5>
+              
+              <h5 class="submenu-header"><a href="/getting-started/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;はじめに</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/training/developer-basics-videos.html">開発者向け基本ビデオ</a></li>
+                    
+                    <li><a href="/getting-started/what-brightcove-player.html">Brightcove Playerとは何ですか？</a></li>
+                    
+                    <li><a href="/getting-started/overview-brightcove-player.html">概要:Brightcove Player</a></li>
+                    
+                    <li><a href="/getting-started/learning-guide-video-advertising.html">学習ガイド:動画広告</a></li>
+                    
+                    <li><a href="/getting-started/overview-brightcove-player-plugins.html">概要:Brightcove Playerプラグイン</a></li>
+                    
+                    <li><a href="/training/player-development-training-videos.html">プレーヤー開発トレーニングビデオ</a></li>
+                    
+                    <li><a href="/getting-started/step-step-brightcove-player.html">ステップバイステップ:Brightcove Player</a></li>
+                    
+                    <li><a href="/getting-started/step-step-player-customization.html">ステップバイステップ:プレーヤーのカスタマイズ</a></li>
+                    
+                    <li><a href="/training/training-demand-developing-brightcove-player.html">トレーニング:Brightcoveプレーヤーで開発する</a></li>
+                    
+                    <li><a href="/getting-started/learning-guide-using-rest-apis.html">学習ガイド:REST API を使用する</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/basics/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;基本を学ぼう</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/basics/developer-basics-advanced-player-code.html">アドバンスプレイヤーコード</a></li>
+                    
+                    <li><a href="/basics/developer-basics-autoplaying-video.html">ビデオの自動再生</a></li>
+                    
+                    <li><a href="/basics/developer-basics-custom-plugin-converting-code.html">カスタムプラグイン-コードの変換</a></li>
+                    
+                    <li><a href="/basics/developer-basics-custom-plugin-passing-data.html">カスタムプラグイン-データの受け渡し</a></li>
+                    
+                    <li><a href="/basics/developer-basics-custom-plugin-using-studio.html">カスタムプラグイン-Studioを使用する</a></li>
+                    
+                    <li><a href="/basics/developer-basics-custom-plugin-why-and-how.html">カスタムプラグイン-理由と方法</a></li>
+                    
+                    <li><a href="/training/developer-basics-videos.html">開発者向け基本ビデオ</a></li>
+                    
+                    <li><a href="/basics/developer-basics-generating-player-code.html">プレイヤーコードを生成しています</a></li>
+                    
+                    <li><a href="/basics/developer-basics-preparing-write-code.html">コードを書く準備をする</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/references/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;参考文献</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/references/bcp7-migration-guide.html">Brightcove Player 7 Migration Guide</a></li>
+                    
+                    <li><a href="/brightcove-player/current-release/index.html">ブライトコーブプレイヤー API ドキュメント</a></li>
+                    
+                    <li><a href="/references/brightcove-player-cookies.html">Brightcove Playerクッキー</a></li>
+                    
+                    <li><a href="/references/brightcove-player-error-reference.html">Brightcove Playerエラーリファレンス</a></li>
+                    
+                    <li><a href="/references/brightcove-player-system-requirements.html">Brightcove Playerシステム要件</a></li>
+                    
+                    <li><a href="/references/catalog-search-architecture.html">カタログ検索アーキテクチャ</a></li>
+                    
+                    <li><a href="https://general.support.brightcove.com/general/known-issues-studio-brightcove-player-and-apis.html">既知の問題</a></li>
+                    
+                    <li><a href="/references/player-catalog.html">プレーヤーカタログ</a></li>
+                    
+                    <li><a href="/references/player-feature-support-browser.html">ブラウザによるプレーヤー機能のサポート</a></li>
+                    
+                    <li><a href="/references/player-metadata-bcinfo.html">bcinfo からのプレーヤーメタデータ</a></li>
+                    
+                    <li><a href="/brightcove-player/current-release/Player.html">プレイヤーメソッド/イベント API</a></li>
+                    
+                    <li><a href="/references/guide-playlist-api.html">プレイリスト API ガイド</a></li>
+                    
+                    <li><a href="/references/video-metadata-mediainfo.html">mediainfo からのビデオメタデータ</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/plugins/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;プラグイン</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/plugins/360degvr-video-plugin.html">360º ビデオ</a></li>
+                    
+                    <li><a href="/plugins/ad-only-plugin.html">広告のみ</a></li>
+                    
+                    <li><a href="/plugins/advertising-freewheel-plugin.html">FreeWheel プラグインでの広告</a></li>
+                    
+                    <li><a href="/plugins/advertising-ima3-plugin.html">IMA3 プラグインでの広告</a></li>
+                    
+                    <li><a href="/plugins/upgrading-ima3-plugin-version-3.html">IMA3 プラグインバージョン 3 へのアップグレード</a></li>
+                    
+                    <li><a href="/plugins/implementing-server-side-ads-brightcove-player.html">SSAIとの広告</a></li>
+                    
+                    <li><a href="/plugins/airplay-plugin.html">AirPlay</a></li>
+                    
+                    <li><a href="/plugins/chromecast-plugin-brightcove-player.html">Chromecast</a></li>
+                    
+                    <li><a href="/plugins/custom-endscreen-plugin.html">カスタムエンドスクリーン</a></li>
+                    
+                    <li><a href="/plugins/display-error-messages-plugin.html">エラーメッセージの表示</a></li>
+                    
+                    <li><a href="/plugins/display-thumbnail-previews-plugin.html">サムネイルプレビューを表示</a></li>
+                    
+                    <li><a href="/plugins/configuring-brightcove-player-drm.html">DRM</a></li>
+                    
+                    <li><a href="/plugins/google-tag-manager-plugin-brightcove-player.html">グーグルタグマネージャ</a></li>
+                    
+                    <li><a href="/plugins/hls-plugin.html">HLS</a></li>
+                    
+                    <li><a href="/plugins/live-dvrux-plugin.html">ライブDVRUX</a></li>
+                    
+                    <li><a href="/plugins/display-overlay-plugin.html">オーバーレイ</a></li>
+                    
+                    <li><a href="/plugins/overview-brightcove-player-plugins.html">概要:プレーヤープラグイン</a></li>
+                    
+                    <li><a href="/plugins/picture-picture-plugin-aka-floating-or-pinned.html">ピクチャー・イン・ピクチャー</a></li>
+                    
+                    <li><a href="/plugins/playerplugin-version-testing.html">プレーヤー/プラグインのバージョンテスト</a></li>
+                    
+                    <li><a href="/plugins/playlist-endscreen-plugin.html">プレイリスト終了画面</a></li>
+                    
+                    <li><a href="/plugins/playlist-ui-plugin.html">プレイリスト UI</a></li>
+                    
+                    <li><a href="/plugins/changelog/index.html">プラグインの更新履歴</a></li>
+                    
+                    <li><a href="/plugins/plugin-registry.html">プラグインレジストリ</a></li>
+                    
+                    <li><a href="/plugins/plugin-version-reference.html">プラグインバージョンリファレンス</a></li>
+                    
+                    <li><a href="/plugins/quality-selection-plugin.html">品質選択</a></li>
+                    
+                    <li><a href="/plugins/social-sharing-plugin.html">ソーシャルメディア</a></li>
+                    
+                    <li><a href="/plugins/tealium-plugin-brightcove-player.html">Tealium タグマネージャ</a></li>
+                    
+                    <li><a href="/plugins/thumbnails-plugin.html">サムネイル探し</a></li>
+                    
+                    <li><a href="/plugins/video-seo-schema-generator-plugin.html">ビデオ SEO スキーマジェネレータ</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/advertising/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;広告</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/advertising/ad-events-and-ad-objects.html">広告イベントと広告オブジェクト</a></li>
+                    
+                    <li><a href="/plugins/ad-only-plugin.html">広告専用プラグイン</a></li>
+                    
+                    <li><a href="/plugins/advertising-freewheel-plugin.html">FreeWheel プラグインでの広告</a></li>
+                    
+                    <li><a href="/plugins/advertising-ima3-plugin.html">IMA3 プラグインでの広告</a></li>
+                    
+                    <li><a href="/advertising/client-side-preroll-with-live-ssai.html">ライブSSAIを使用したクライアント側のプリロール広告</a></li>
+                    
+                    <li><a href="/advertising/displaying-ads-using-ad-cue-points.html">広告キューポイントを使用した広告の表示</a></li>
+                    
+                    <li><a href="/advertising/flash-no-longer-valid-ima.html">フラッシュはもはやIMA では無効です</a></li>
+                    
+                    <li><a href="/advertising/guide-ad-partner-integration.html">ガイド:広告パートナーの統合</a></li>
+                    
+                    <li><a href="/advertising/guide-contrib-ads-migration.html">ガイド:contrib-ads の移行</a></li>
+                    
+                    <li><a href="/plugins/implementing-server-side-ads-brightcove-player.html">Brightcoveプレーヤーで SSAI を実装する</a></li>
+                    
+                    <li><a href="/advertising/jump-start-header-bidding-ad.html">ジャンプ開始:ヘッダー入札広告</a></li>
+                    
+                    <li><a href="/advertising/jump-start-outstream-ad.html">ジャンプ開始:アウトストリーム広告</a></li>
+                    
+                    <li><a href="/advertising/jump-start-pre-roll-ad.html">ジャンプ開始:プレロール広告</a></li>
+                    
+                    <li><a href="/advertising/known-issues-server-side-ad-insertion-ssai.html">既知の問題:サーバー側広告挿入 (SSAI) </a></li>
+                    
+                    <li><a href="/getting-started/learning-guide-video-advertising.html">学習ガイド:動画広告</a></li>
+                    
+                    <li><a href="/advertising/step-step-implementing-advertising.html">ステップバイステップ:広告の実装</a></li>
+                    
+                    <li><a href="/advertising/testing-pre-release-advertising-plugins.html">プレリリース広告プラグインのテスト</a></li>
+                    
+                    <li><a href="/advertising/using-dfp-premium-brightcove-player.html">Brightcoveプレーヤーで DFP プレミアムを使用する</a></li>
+                    
+                    <li><a href="/advertising/using-player-enhancements-live-ssai-brightcove-player.html">ライブSSAIのプレーヤー拡張機能の使用</a></li>
+                    
+                    <li><a href="/advertising/video-cloud-ssai-ad-tag-validation.html">ビデオクラウド SSAI 広告タグの検証</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/publish/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;動画とプレーヤーの公開</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/publish/assigning-video-player-programmatically.html">プログラムによるプレーヤーへのビデオの割り当て</a></li>
+                    
+                    <li><a href="/publish/available-options-advanced-page-embed-code.html">高度な（ページ内の）埋め込みコードのオプション</a></li>
+                    
+                    <li><a href="/publish/available-options-standard-iframe-embed-code.html">標準（iframe）埋め込みコードのオプション</a></li>
+                    
+                    <li><a href="/publish/brightcove-player-loader.html">Brightcoveのプレーヤーローダー</a></li>
+                    
+                    <li><a href="/publish/bulk-updating-brightcove-default-player.html">Brightcoveのデフォルトプレーヤーの一括更新</a></li>
+                    
+                    <li><a href="https://studio.support.brightcove.com/publish/choosing-correct-embed-code.html">正しい埋め込みコードの選択</a></li>
+                    
+                    <li><a href="/publish/delaying-player-instantiation.html">プレイヤーのインスタンス化の遅延</a></li>
+                    
+                    <li><a href="/publish/pre-release-player.html">プレリリースプレーヤー</a></li>
+                    
+                    <li><a href="/publish/syndication-strategies.html">シンジケーション戦略</a></li>
+                    
+                    <li><a href="/publish/using-non-brightcove-player.html">Brightcove以外のプレーヤーを使用する</a></li>
+                    
+                    <li><a href="https://studio.support.brightcove.com/publish/using-multiple-players-one-page.html">1ページで複数のプレイヤーを使用する</a></li>
+                    
+                    <li><a href="https://studio.support.brightcove.com/publish/using-reference-ids.html">参照 ID の使用</a></li>
+                    
+                    <li><a href="">ビデオレンディションインスペクタ</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/troubleshooting/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;トラブルシューティング</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/troubleshooting/brightcove-playback-technology-app.html">Brightcoveの再生テクノロジーアプリ</a></li>
+                    
+                    <li><a href="/references/brightcove-player-error-reference.html">Brightcove Playerエラーリファレンス</a></li>
+                    
+                    <li><a href="/troubleshooting/brightcove-player-information-modal.html">Brightcoveのプレーヤー情報モーダル</a></li>
+                    
+                    <li><a href="/troubleshooting/brightcove-player-troubleshooting-guide.html">Brightcove Playerトラブルシューティングガイド</a></li>
+                    
+                    <li><a href="/troubleshooting/creating-charles-log.html">チャールズ・ログの作成</a></li>
+                    
+                    <li><a href="/troubleshooting/creating-network-log.html">ネットワークログの作成</a></li>
+                    
+                    <li><a href="/troubleshooting/domain-restrictions-messaging.html">ドメイン制限メッセージング</a></li>
+                    
+                    <li><a href="/plugins/display-error-messages-plugin.html">エラーメッセージプラグインの表示</a></li>
+                    
+                    <li><a href="/troubleshooting/manually-setting-player-version.html">プレーヤーのバージョンを手動で設定する</a></li>
+                    
+                    <li><a href="/plugins/playerplugin-version-testing.html">プレーヤー/プラグインのバージョンテスト</a></li>
+                    
+                    <li><a href="/troubleshooting/player-informational-properties.html">プレイヤー情報プロパティ</a></li>
+                    
+                    <li><a href="/code-samples/brightcove-player-sample-live-custom-error-message.html">サンプル:ライブカスタムエラーメッセージ</a></li>
+                    
+                    <li><a href="/troubleshooting/step-step-brightcove-player-debugger.html">ステップバイステップ:Brightcoveプレーヤーデバッガ</a></li>
+                    
+                    <li><a href="/troubleshooting/running-network-path-trace.html">ネットワークパストレースの実行</a></li>
+                    
+                    <li><a href="/troubleshooting/using-player-reference.html">プレーヤーリファレンスの使用</a></li>
+                    
+                    <li><a href="/troubleshooting/vetting-brightcove-player-releases.html">Vetting Brightcoveプレーヤーリリース</a></li>
+                    
+                    <li><a href="/troubleshooting/viewing-player-configuration.html">プレーヤ設定の表示</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/styling/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;スタイリングと外観</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/styling/customizing-player-appearance.html">プレーヤーの外観のカスタマイズ</a></li>
+                    
+                    <li><a href="/styling/customizing-player-appearance-legacy-skin.html">プレイヤーの外観のカスタマイズ-レガシースキン</a></li>
+                    
+                    <li><a href="/styling/brightcove-player-sample-player-styling-playground.html">プレイヤースタイリングプレイグラウンド</a></li>
+                    
+                    <li><a href="/styling/quick-start-player-customization-legacy-skin.html">「クイックスタート:プレイヤーのカスタマイズ-レガシースキン</a></li>
+                    
+                    <li><a href="/getting-started/step-step-player-customization.html">ステップバイステップ:プレーヤーのカスタマイズ</a></li>
+                    
+                    <li><a href="/styling/responsive-sizing-brightcove-player.html">Brightcove Playerレスポンシブサイジング</a></li>
+                    
+                    <li><a href="/styling/sizing-player.html">プレーヤーのサイズ変更</a></li>
+                    
+                    <li><a href="/styling/skins-and-player-versions.html">スキンとプレーヤーのバージョン</a></li>
+                    
+                    <li><a href="https://studio.support.brightcove.com/media/styling-captions.html">キャプションのスタイル設定</a></li>
+                    
+                    <li><a href="/styling/styling-playlists.html">プレイリストのスタイリング</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/playback/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;再生</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/playback/autoplay-considerations.html">自動再生に関する考慮事項</a></li>
+                    
+                    <li><a href="/troubleshooting/brightcove-playback-technology-app.html">Brightcoveの再生テクノロジーアプリ</a></li>
+                    
+                    <li><a href="/playback/china-delivery-with-bcp.html">チャイナデリバリー</a></li>
+                    
+                    <li><a href="/playback/xdr-with-bcplayer.html">クロスデバイスレジューム</a></li>
+                    
+                    <li><a href="https://studio.support.brightcove.com/publish/deep-linking.html">ディープリンク</a></li>
+                    
+                    <li><a href="/playback/delivering-hls-video.html">HLS ビデオの配信</a></li>
+                    
+                    <li><a href="/playback/using-delivery-rules-with-bcp.html">配達規則</a></li>
+                    
+                    <li><a href="/playback/determining-which-rendition-will-play.html">再生するレンディションを決定する</a></li>
+                    
+                    <li><a href="/playback/forensic-watermarking-with-bcp.html">フォレンジック透かし</a></li>
+                    
+                    <li><a href="/playback/guide-playback-technology.html">ガイド:再生技術</a></li>
+                    
+                    <li><a href="/plugins/hls-plugin.html">HLS プラグイン</a></li>
+                    
+                    <li><a href="/playback/ios-and-brightcove-player.html">iOS と Brightcove Player</a></li>
+                    
+                    <li><a href="/playback/playback-restrictions-with-bcp.html">再生の制限</a></li>
+                    
+                    <li><a href="/playback/overview-https-support.html">概要:HTTPSサポート</a></li>
+                    
+                    <li><a href="/plugins/quality-selection-plugin.html">品質選択プラグイン</a></li>
+                    
+                    <li><a href="/playback/static-url-delivery.html">静的 URL 配信</a></li>
+                    
+                    <li><a href="/playback/streaming-playready-protected-content-dynamic-delivery.html">PlayReady 保護されたコンテンツのストリーミング</a></li>
+                    
+                    <li><a href="/playback/using-brightcove-player-tve.html">TVE でBrightcoveプレーヤーを使用する</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/content-protection/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;DRMとコンテンツ保護</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="https://studio.support.brightcove.com/players/configuring-player-content-restrictions.html">プレーヤーコンテンツ制限の設定</a></li>
+                    
+                    <li><a href="/content-protection/creating-dash-drm-manifest-brightcove-player.html">Brightcoveプレーヤー用の DASH DRM マニフェストを作成する</a></li>
+                    
+                    <li><a href="/troubleshooting/domain-restrictions-messaging.html">ドメイン制限メッセージング</a></li>
+                    
+                    <li><a href="/plugins/configuring-brightcove-player-drm.html">DRMプラグイン</a></li>
+                    
+                    <li><a href="/content-protection/overview-content-protection.html">概要:コンテンツ保護</a></li>
+                    
+                    <li><a href="/content-protection/policy-keys.html">ポリシーキー</a></li>
+                    
+                    <li><a href="/content-protection/restricting-video-playback-using-ip-address.html">IP アドレスを使用したビデオ再生の制限</a></li>
+                    
+                    <li><a href="/content-protection/signed-urls-and-token-auth-live-stream.html">ライブストリームでの署名付き URL とトークン認証</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/coding-topics/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;コーディングトピック</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/publish/brightcove-player-loader.html">Brightcoveのプレーヤーローダー</a></li>
+                    
+                    <li><a href="/references/catalog-search-architecture.html">カタログ検索のアップグレード</a></li>
+                    
+                    <li><a href="/code-samples/brightcove-player-sample-trigger-rewind-custom-event.html">カスタムイベント</a></li>
+                    
+                    <li><a href="/playback/guide-playback-technology.html">ガイド:再生技術</a></li>
+                    
+                    <li><a href="/coding-topics/programmatically-localizing-brightcove-player.html">Brightcove Playerローカライズ</a></li>
+                    
+                    <li><a href="/coding-topics/localizing-plugins.html">プラグインのローカライズ</a></li>
+                    
+                    <li><a href="/coding-topics/player-events.html">プレイヤーイベント</a></li>
+                    
+                    <li><a href="/coding-topics/overview-components.html">概要:コンポーネント</a></li>
+                    
+                    <li><a href="/playback/overview-https-support.html">概要:HTTPSサポート</a></li>
+                    
+                    <li><a href="/coding-topics/overview-player-api.html">概要:プレーヤー API </a></li>
+                    
+                    <li><a href="/coding-topics/pass-data-plugin.html">プラグインにデータを渡す</a></li>
+                    
+                    <li><a href="/coding-topics/react-player-loader.html">プレイヤーローダーを反応させる</a></li>
+                    
+                    <li><a href="/coding-topics/reporting-brightcove-player-configurations.html">Brightcove Player設定に関するレポート</a></li>
+                    
+                    <li><a href="/coding-topics/requirejs-and-brightcove-player.html">RequireJSとBrightcove Player</a></li>
+                    
+                    <li><a href="/coding-topics/retrieve-bitrate-current-rendition.html">現在のレンディションのビットレートを取得する</a></li>
+                    
+                    <li><a href="/coding-topics/step-step-plugin-development.html">ステップバイステップ:プラグイン開発</a></li>
+                    
+                    <li><a href="/coding-topics/step-step-videojs-plugin-generator.html">ステップバイステップ:Video.js プラグインジェネレータ</a></li>
+                    
+                    <li><a href="/coding-topics/using-bc-and-getplayer-methods.html">bc () と getPlayer () メソッドを使用する</a></li>
+                    
+                    <li><a href="/troubleshooting/viewing-player-configuration.html">プレーヤ設定の表示</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/general/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;一般情報</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="https://studio.support.brightcove.com/publish/adding-application-id-player-embed-code.html">プレーヤーの埋め込みコードへのアプリケーション ID の追加</a></li>
+                    
+                    <li><a href="/general/adding-captions-videos-programmatically.html">プログラムによる動画へのキャプションの追加</a></li>
+                    
+                    <li><a href="https://studio.support.brightcove.com/media/adding-chapters-video.html">ビデオへのチャプターの追加</a></li>
+                    
+                    <li><a href="/general/brightcove-player-6-now-default-version.html">Brightcove Player 6 がデフォルトバージョンになりました</a></li>
+                    
+                    <li><a href="/general/brightcove-player-accessibility.html">Brightcove Playerアクセシビリティ</a></li>
+                    
+                    <li><a href="/plugins/custom-endscreen-plugin.html">カスタムエンドスクリーンプラグイン</a></li>
+                    
+                    <li><a href="/plugins/display-overlay-plugin.html">オーバーレイプラグインを表示</a></li>
+                    
+                    <li><a href="/general/ga-self-configure.html">GoogleAnalyticsの自己構成</a></li>
+                    
+                    <li><a href="/references/guide-playlist-api.html">ガイド:プレイリスト API </a></li>
+                    
+                    <li><a href="/general/identify-and-delete-low-performing-videos.html">パフォーマンスの低い動画の特定と削除</a></li>
+                    
+                    <li><a href="/general/implementing-cue-points-programmatically.html">プログラムによるキューポイントの実装</a></li>
+                    
+                    <li><a href="/general/implementing-playlists.html">プレイリストの実装</a></li>
+                    
+                    <li><a href="/general/implementing-modaldialog.html">ModalDialogの実装</a></li>
+                    
+                    <li><a href="/general/live-hls.html">ライブHLS</a></li>
+                    
+                    <li><a href="/general/live-stream-configuration.html">ライブストリーム設定</a></li>
+                    
+                    <li><a href="/general/multiple-audio-tracks.html">複数のオーディオトラック</a></li>
+                    
+                    <li><a href="/general/player-configuration-guide.html">プレーヤー設定ガイド</a></li>
+                    
+                    <li><a href="/general/playing-live-streams.html">ライブストリームを再生する</a></li>
+                    
+                    <li><a href="/plugins/playlist-ui-plugin.html">プレイリスト UI プラグイン</a></li>
+                    
+                    <li><a href="/content-protection/signed-urls-and-token-auth-live-stream.html">ライブストリームでの署名付き URL とトークン認証</a></li>
+                    
+                    <li><a href="/plugins/social-sharing-plugin.html">ソーシャルメディアプラグイン</a></li>
+                    
+                    <li><a href="https://apis.support.brightcove.com/player-management/getting-started/step-step-player-management.html">ステップバイステップ:プレーヤー管理</a></li>
+                    
+                    <li><a href="/styling/styling-playlists.html">プレイリストのスタイリング</a></li>
+                    
+                    <li><a href="/general/using-screen-reader-brightcove-player.html">Brightcoveプレーヤーでスクリーンリーダーを使用する</a></li>
+                    
+                    <li><a href="/general/versions-brightcove-player-documentation.html">Brightcove Playerドキュメントのバージョン</a></li>
+                    
+                    <li><a href="/general/volume-control.html">ボリュームコントロール</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/code-samples/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;コードサンプル</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/code-samples/index-thumb.html">グループ別のコードサンプル</a></li>
+                    
+                    <li><a href="/code-samples/index.html">コードサンプルインデックス</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/amp/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;AMP</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/amp/amp-using-video-cloud-video.html">AMP ビデオクラウドビデオを使用する</a></li>
+                    
+                    <li><a href="/amp/amp-using-external-video.html">AMP外部ビデオを使用する</a></li>
+                    
+                    <li><a href="/amp/amp-and-advertising.html">AMPと広告</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/training/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;トレーニング</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/training/online-training-courses.html">すべてのオンライントレーニングコース</a></li>
+                    
+                    <li><a href="/training/developer-basics-videos.html">開発者向け基本ビデオ</a></li>
+                    
+                    <li><a href="/training/player-development-training-videos.html">プレーヤー開発トレーニングビデオ</a></li>
+                    
+                    <li><a href="/training/register-training.html">インストラクター主導トレーニングへの登録</a></li>
+                    
+                    <li><a href="/training/training-demand-developing-brightcove-player.html">トレーニング:Brightcoveプレーヤーで開発する</a></li>
+                    
+                    <li><a href="https://apis.support.brightcove.com/player-management/getting-started/training-demand-quick-start-player-management.html">トレーニング:プレーヤー管理へのクイックスタート</a></li>
+                    
+                    <li><a href="/training/brightcove-university.html">Brightcove Universityトレーニングコース</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/release-notes/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;リリースノート</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/release-notes/brightcove-player-release-notes.html">Brightcoveプレーヤーリリースノート</a></li>
+                    
+                    <li><a href="/release-notes/brightcove-player-prerelease-notes.html">Brightcoveプレーヤープレリリースノート</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/support/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;サポート</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">Brightcoveのシステムステータスページの表示</a></li>
+                    
+                    <li><a href="/support/contact-sales.html">営業へのお問い合わせ</a></li>
+                    
+                    <li><a href="/support/opening-case-with-brightcove-support.html">サポートケースを開く</a></li>
+                    
+                    <li><a href="/support/reset-support-portal-password.html">サポートポータルのパスワードをリセットする</a></li>
+                   
+              </ul>
+             
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Navigation Menu"></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">ページコンテンツ</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a> 
+<article class="bcls-article">
+<h1>HLS プラグインの変更履歴</h1>
+<summary>以下は、プラグインの変更を追跡します。</summary>
+<section class="bcls-section">
+  <h2 id="Changelog">更新履歴</h2>
+  <h4>2018年11月14日</h4>
+  <p>5.15.0</p>
+  <ul>
+    <li>マニフェストとメディアリクエストのリダイレクトサポートを追加</li>
+  </ul>
+  <h4>2018年3月21日</h4>
+  <p>v5.14.1</p>
+  <ul>
+    <li>縮小されたdistファイルを修正
+      <ul>
+        <li><strong> webwackify </strong>を 0.1.6 に更新しました</li>
+        <li><strong></strong>  videojs-contrib-メディアソースを 4.7.2 に更新しました</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2018年3月15日</h4>
+  <p>5.14.0</p>
+  <ul>
+    <li><strong> videojs-contrib-media-sources </strong>を 4.7.1 に、<strong>  webwackify </strong>を 0.1.5 に更新しました</li>
+    <li>セグメントメタデータのキュー（帯域幅/解像度/コーデック/バイト長）でより有用な情報</li>
+  </ul>
+  <h4>2018年3月7日</h4>
+  <p>5.13.0</p>
+  <ul>
+    <li>WebpackバンドルをサポートするためにWebワーカーにwebwackifyを使用する</li>
+    <li><code translate="No">tech.play()</code>   Chromeで未解決の約束エラーを投げるのを修正</li>
+    <li>URLツールキットをバージョン2.1.3にアップデートする</li>
+    <li>JSDelivr リンクを追加する</li>
+    <li>カルマ再接続の設定を更新して video.js に一致させます
+      <ul>
+        <li>カルマのbrowserDisconnectToleranceを3に増やします</li>
+      </ul>
+    </li>
+    <li><code translate="No">nvmrc</code>' トラビスクロームリファレンスを追加して更新する
+      <ul>
+        <li>karma-chrome-launcherをバージョン2.2.0に更新します</li>
+        <li>カルマをバージョン1.7.1に更新し、travisの設定からFirefoxを削除してください</li>
+        <li>トラビスのノードモジュールキャッシュを有効にする</li>
+        <li>videojs-contrib-品質レベルをバージョン2.0.4に更新</li>
+        <li>イベントハンドリングメソッドを呼び出して、Dispose時のイベントハンドラのクリーンアップのテストを修正</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2017年11月6日</h4>
+  <p>5.12.2</p>
+  <ul>
+    <li>未使用の予想マニフェスト JavaScript ファイルを削除する</li>
+    <li><strong> PlaylistLoader から無関係なメソッドを削除する</strong> 
+      <ul>
+        <li><code translate="No">isLowestEnabledRendition</code>プレイリストモジュールに移動</li>
+      </ul>
+    </li>
+    <li><strong> contrib-media </strong>ソースを 4.6.2 に更新
+      <ul>
+        <li><strong> mux.js </strong>を 4.3.2 に更新する
+          <ul>
+            <li>十分なデータがあるときに<strong>  pes </strong>パケットをフラッシュする</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2017年10月24日</h4>
+  <p>5.12.1</p>
+  <ul>
+    <li><strong> contrib-media </strong>ソースを 4.6.1 に更新する
+      <ul>
+        <li><strong> mux.js </strong>を 4.3.1 に更新する
+          <ul>
+            <li>CEA-608 では、グローバルではなくフィールドごとにアクティブなデータチャネルを設定</li>
+            <li>キャプションが間違った CC に配置される問題を修正</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2017年10月19日</h4>
+  <p>5.12.0</p>
+  <ul>
+    <li>3 つのセグメントではなく安全なライブポイントに使用<code translate="No">lastSegmentDuration + 2 * targetDuration</code>   
+      <ul>
+        <li>現在の時間の目標期間内にバッファのトリミングを削除しない</li>
+        <li>停止したプレイリストチェックのしきい値を上げる</li>
+      </ul>
+    </li>
+    <li>IE11 Win 8.1+とEdgeでのレンディションスイッチのビデオ破損を修正
+      <ul>
+        <li><code translate="No">segment-time-mapping</code>イベント</li>
+        <li><strong> contrib-media </strong>ソースを 4.6.0 に更新</li>
+      </ul>
+    </li>
+    <li>ブラックリストよりもユーザーが有効にしたプレイリストの優先順位を付ける
+      <ul>
+        <li>互換性のない設定により、永久にブラックリストに登録されたプレイリストを選択することをプレイリストセレクタに許可しない</li>
+        <li>プレイリストセレクタ内でプレイリストをフィルタリングするときに、有効なプレイリスト（内部的にブラックリストに登録されておらず、ユーザーによって無効になっていない）が使用できない場合は、ブラックリストの状態に関係なく、ユーザーが無効にしていないプレイリストのリストを使用するようにフォールバックします。</li>
+        <li>後で再試行する理由がないので、違法なメディアスイッチからブラックリストに登録されたプレイリストが永久にブラックリストに登録されていることを確認してください。</li>
+        <li>表現APIは、互換性のないプレイリストと一時的なブラックリストプレイリストの両方ではなく、互換性のないプレイリストだけをフィルタリングするリストを返します。</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2017年10月11日</h4>
+  <p>v5.11.1</p>
+  <ul>
+    <li>videojs-contrib-メディアソースを 4.5.3 に更新
+      <ul>
+        <li>mux.js を 4.2.2 に更新する
+          <ul>
+            <li>PMTの最初のオーディオトラックとビデオトラックを使用する</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><code translate="No">InvalidStateError</code>   IE11でのライブ再生を修正</li>
+  </ul>
+  <h4>2017年9月20日</h4>
+  <p>5.11.0</p>
+  <ul>
+    <li>Videojs-contrib-Media ソースを 4.5.2 に更新
+      <ul>
+        <li>video.js RemoteTextTrack の自動クリーンアップでテキストトラックのクリーンアップを処理させよう</li>
+      </ul>
+    </li>
+    <li>コーデック情報がマスターマニフェストにない場合、プローブで互換性のないプレイリストをブラックリストする</li>
+    <li>シーク可能ウィンドウの前にシークするときにシーク可能な開始にシークする</li>
+    <li>MediaGroups: さまざまなバグ修正とリファクタリング
+      <ul>
+        <li>Firefox 48 のオーディオ情報の変更をサポートするためのチェックを削除します</li>
+        <li>オーディオトラックと断続的なdesync間の遅延切り替えを修正</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2017年8月28日</h4>
+  <p>v5.10.1</p>
+  <ul>
+    <li>修正:オーディオ情報の変更時に FLV メタデータタグが追加されるようになりました</li>
+  </ul>
+  <h4>2017年8月22日</h4>
+  <p>v5.10.0</p>
+  <ul>
+    <li>CEA608の実装：cc2-cc4のサポート、特殊/拡張文字、書式設定
+      <ul>
+        <li>4つのCCトラックすべてが利用可能になりました</li>
+        <li>マスターマニフェストで CLOSED-CAPTIONS が指定されている場合は、対応する CC テキストトラックに適切なラベルが付けられ、それ以外の場合は CC1-CC4 というラベルが付けられます。</li>
+        <li>下線とイタリックがレンダリングされます</li>
+        <li>@squarebracket に特別な感謝</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2017年8月16日</h4>
+  <p>5.9.0</p>
+  <ul>
+    <li>起動時に利用可能な最も低いビットレートのビデオレンディションを選択するオプションを追加しました</li>
+    <li>シーク後にセグメントローダのロードを常にアクティブにする</li>
+    <li><code translate="No">canplay</code><code translate="No">PlaybackWatcher</code>監視を開始する前に技術からのイベントを待つ
+      <ul>
+        <li>Win10 <code translate="No">InvalidStateError</code>    IE11で修正しました</li>
+      </ul>
+    </li>
+    <li>キャッシュループを防ぐため、早期中止時にプレイリストを 2 分間ブラックリストに登録する
+      <ul>
+        <li>ネットワーク/キャッシュの不整合によるレンディション切り替えループを防止</li>
+        <li><strong></strong>早めに打ち切るとbandwidthupdateを起動するな</li>
+      </ul>
+    </li>
+    <li>HLS によって追加されたテキストトラックが正しく配置されていることを確認した</li>
+    <li>IE11 Win8.1で後方シークを修正</li>
+  </ul>
+  <h4>2017年8月7日</h4>
+  <p>v5.8.3</p>
+  <ul>
+    <li>二重キャプションの問題を修正</li>
+    <li>m3u8-パーサーがそうでない場合は、属性プロパティをプレイリストオブジェクトにアタッチします
+      <ul>
+        <li>stream-inf の属性がない場合の警告ログを追加</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2017年7月12日</h4>
+  <p>v5.8.2</p>
+  <ul>
+    <li>MediaSource を閉じたときのセグメントの処理を修正</li>
+  </ul>
+  <h4>2017年7月12日</h4>
+  <p>v5.8.1</p>
+  <ul>
+    <li>修正:videojs-contrib-メディアソースでのオーディオのみのプレイリスト v4.4.7</li>
+  </ul>
+  <h4>2017年7月6日</h4>
+  <p>v5.8.0</p>
+  <ul>
+    <li>ABR の改善
+      <ul>
+        <li>Android デバイスで 0.0625 MB/秒の開始帯域幅値を使用します</li>
+        <li>一定量のフォワードバッファがいっぱいになるまでアップスイッチを品質にしないでください。<code translate="No">BUFFER_LOW_WATER_LINE</code>   </li>
+        <li>再生の最初の30秒間に、<code translate="No">BUFFER_LOW_WATER_LINE</code>およびをそれぞれ0-&gt; 30、30-&gt; <code translate="No">GOAL_BUFFER_LENGTH</code>    60から動的に増やします</li>
+        <li>XHR <code translate="No">progress</code>イベントによって報告された帯域幅で、ネットワーク条件がリバッファリングを起こさずに要求を完了するのに十分な速度ではないことが示された場合、完了前にセグメント要求を中止する</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2017年6月27日</h4>
+  <p>v5.7.0</p>
+  <ul>
+    <li><strong> mux.js </strong>を 4.1.5 に、<strong>  videojs contrib-media </strong>ソースを 4.4.6 に更新する
+      <ul>
+        <li>TS解析のフロントエンドからのPESパケットは、完了時にのみフラッシュします
+          <ul>
+            <li>完了は、PES_Packet_length がデータの長さと一致する任意の時間、またはビデオパケットとして定義されます</li>
+            <li>ソースでオーディオPESパケットがセグメント間で分割されている場合、不完全なパケットがパイプラインに送信される問題を回避します。</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>HLS 使用状況追跡イベントの追加
+      <ul>
+        <li>使用状況追跡イベントは、特定の HLS 機能、エンコーディング設定、または API が使用された場合に発生します。これらの使用イベントは README にリストされていますが、メジャーバージョンを変更することなくいつでも変更される可能性があります。</li>
+      </ul>
+    </li>
+    <li>デミュックされたオーディオとビデオの EndofStream を修正</li>
+  </ul>
+  <h4>2017年6月20日</h4>
+  <p>v5.6.0</p>
+  <ul>
+    <li>メディアグループの切り替え時にセグメントローダーをリセットしない
+      <ul>
+        <li>ローダーが一時停止しているときでもアボート時にローダの状態を ready に設定する</li>
+      </ul>
+    </li>
+    <li>セグメントメタデータのキューを作成できない場合のクラッシュを防止</li>
+    <li><code translate="No">overrideNative</code>プレイヤーレベルのオプションとして設定できるようにする</li>
+    <li>移動平均プレイリストセレクターを作成する
+      <ul>
+        <li>帯域幅の移動平均を計算し、それを使用してプレイリストを選択する標準のプレイリストセレクタのバリアントを定義します。</li>
+      </ul>
+    </li>
+    <li>技術に関する帯域幅更新イベントをトリガーする</li>
+  </ul>
+  <h4>2017年5月16日</h4>
+  <p>v5.5.3</p>
+  <ul>
+    <li><strong> mux.js </strong>を 4.1.4 に、<strong>  videojs-contrib-media </strong>ソースを 4.4.5 に更新しました
+      <ul>
+        <li>ts プローブは最初にパケットを検索し、正常に解析できる</li>
+        <li>Firefoxで非常に特定の条件下で、<code translate="No">updateend</code>追加または削除ごとにイベントが複数回発生することがある問題を修正</li>
+      </ul>
+    </li>
+    <li>空の応答を受信したときにエラーイベントをトリガーする</li>
+  </ul>
+  <h4>2017年5月10日</h4>
+  <p>5.5.2</p>
+  <ul>
+    <li>すべてが正常に表示されたときに再生が停止する問題を修正しました
+      <ul>
+        <li>不明なプレーヤーを待っているかどうか再生ウォッチャーチェックを追加</li>
+        <li><code translate="No">unknownwaiting</code>技術がネイティブ待機イベントをいつ起動したかチェックしないでください</li>
+        <li>バッファの最後に待機している現在の時刻を追跡しない</li>
+        <li><code translate="No">techWaiting_</code>バッファの最後に失速を検出したときに呼び出す</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2017年5月4日</h4>
+  <p>5.5.1</p>
+  <ul>
+    <li>0 と仮定するのではなく<code translate="No">mediasequence</code>、VOD の有効期限が切れた同期に指定されたものを使用
+      <ol>
+        <li><code translate="No">synccontroller</code>期限切れに使用</li>
+      </ol>
+    </li>
+    <li>修正:CODEC から MIME タイプへの変換では、考えられるすべてのシナリオが考慮されるようになりました</li>
+  </ul>
+  <h4>2017年4月25日</h4>
+  <p>v5.5.0</p>
+  <ul>
+    <li><strong> mux.js </strong>を 4.1.3 に、<strong></strong>メディアソースを 4.4.4 に更新する</li>
+    <li>プレイリストがブラックリストまたは再試行されたときにイベントをトリガーする</li>
+    <li><code translate="No">blacklistplaylist</code>プレイリストがブラックリストに登録されたときにトリガーされます</li>
+    <li><code translate="No">retryplaylist</code>エラーのあるプレイリストの読み込みを再試行するとトリガーされます</li>
+    <li>ブラックリストの期間を変更するオプションを追加</li>
+  </ul>
+  <h4>2017年4月10日</h4>
+  <p>v5.4.1</p>
+  <ul>
+    <li><strong> contrib-media </strong>ソースを 4.4.3 に更新しました</li>
+    <li>修正:メディアソースの準備ができていないときに EndofStream を呼び出す場合の例外</li>
+    <li>修正:fmp4 再生のセグメントタイムマッピング</li>
+    <li><code translate="No">beforeRequest</code>が設定されている場合は、ソースの変更で再利用します
+      <ul>
+        <li><code translate="No">beforeRequest</code>実行時にグローバル xhr の変更を許可する</li>
+        <li><code translate="No">beforeRequest</code>   HLSオブジェクトの作成時に設定するのではなく、常に最新を使用してください</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2017年4月3日</h4>
+  <p>v5.4.0</p>
+  <ul>
+    <li>マニフェストの WebVTT のサポートを追加しました</li>
+    <li>修正:マイナーセグメントローダー修正済み:es</li>
+    <li>修正:代替オーディオの高速品質変更を有効にする</li>
+    <li>追加された機能:更新が停止したライブプレイリストをブラックリスト
+      <ul>
+        <li>最終利用可能な最終レンディションをブラックリスト化しない</li>
+      </ul>
+    </li>
+    <li>すべての XHR 処理コードと関連する状態を SegmentLoader から単一の MediaSegmentRequest 関数にリファクタリングしました</li>
+    <li>現在バッファにあるセグメントに対するキューを含むセグメントメタデータ TextTrack を追加</li>
+    <li>HLS での説明オーディオトラックのサポートを追加
+      <ul>
+        <li>説明オーディオトラックのサポートを追加 ( <strong>  public.accessibility.Describes-Video の特性でマーク</strong> )</li>
+        <li>代替オーディオの種類を正しく設定するためのテストを追加</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2017年3月3日</h4>
+  <p>v5.3.3</p>
+  <ul>
+    <li><strong> videojs-contrib-media </strong>ソースを v4.4.2 に、<strong>  mux.js </strong>を 4.1.1 に更新しました
+      <ul>
+        <li>オーディオがオフセットされたときに余分なフレームを挿入しないように無音挿入を修正</li>
+        <li>メタデータキューマッピングを修正し、同じ startTime を持つグループキューを考慮し、それらを同じ endTime にまとめて再マップするようにしました。</li>
+        <li>フラッシュタグトリムターゲットにファッジファクターを追加</li>
+        <li>機能 Video.js 6 の互換性</li>
+        <li>オーディオとビデオの位置がずれている場合の Flash タグのトリミングを修正</li>
+        <li>「Webワーカーでフラッシュ変換を元に戻す」を元に戻す</li>
+      </ul>
+    </li>
+    <li>非マスタープレイリストのソースに対するセグメント要求がタイムアウトしない問題を修正</li>
+  </ul>
+  <h4>2017年2月22日</h4>
+  <p>v5.3.2</p>
+  <ul>
+    <li>シーク・トゥ・ライブと再同期の悪い推測動作の組み合わせに関するバグを修正</li>
+  </ul>
+  <h4>2017年2月22日</h4>
+  <p>v5.3.1</p>
+  <ul>
+    <li>更新されたロック<strong>url-toolkit</strong>相対URLをサポートするために1.0.9に</li>
+    <li>初期セグメントの選択が不十分で再同期されました</li>
+    <li>長い一時停止後にライブ再生を再開する問題を修正</li>
+  </ul>
+  <h4>2017年2月16日</h4>
+  <p>v5.3.0</p>
+  <ul>
+    <li>すべてのフラッシュシークでセグメントローダーをリセットする
+      <ul>
+        <li><strong> mux.js </strong>を 4.1.0 に更新しました</li>
+        <li><strong></strong>  videojs-contrib-メディアソースを 4.4.0 に更新</li>
+      </ul>
+    </li>
+    <li><code translate="No">SegmentLoader</code>実行の流れをトップダウンからよりよく追跡するために、の関数を再編成しました。</li>
+    <li>playback-watcherのような設定が有効なロギングを優先してアドホックログを削除しました</li>
+    <li>islowestenabledRendition は冗長ストリームで機能しました</li>
+    <li>ワーカーの名前を DecrypterWorker</li>
+  </ul>
+  <h4>2017年2月9日</h4>
+  <p>v5.2.1</p>
+  <ul>
+    <li>Akamai スタイルの冗長 HLS のサポート
+      <ul>
+        <li>安定した選別と常にプライマリを最初に選択</li>
+      </ul>
+    </li>
+    <li>オーディオセグメントローダー用の復号化メッセージのルーティングを修正</li>
+  </ul>
+  <h4>2017年2月8日</h4>
+  <p>v5.2.0</p>
+  <ul>
+    <li>4.3.0 の依存関係を更新しました<code translate="No">mediasources</code>   </li>
+    <li>README から HLS オブジェクトイベントを削除しました</li>
+  </ul>
+  <h4>2017年2月3日</h4>
+  <p>v5.1.1</p>
+  <ul>
+    <li>下位互換性を維持しながら Video.js 6 の前方互換性を導入しました
+      <ul>
+        <li>スワップしてGetTech使って null チェックフラッシュテック</li>
+        <li>古い Video.js <code translate="No">registerComponent</code>の HLS のみ</li>
+        <li><code translate="No">registerPlugin</code>存在する場合に使用します。</li>
+        <li><code translate="No">addTrack</code>相互互換性</li>
+      </ul>
+    </li>
+    <li>アンダーフローとライブ再同期のイベントを追加しました
+      <ul>
+        <li>QoS測定のために、再生ウォッチャーがアクティブになっている頻度を把握すると便利です。ビデオバッファのギャップが原因でプレイヤーがライブウィンドウの背面またはストールから落ちたときの新しいイベントを追加します。</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2017年1月31日</h4>
+  <p>v5.1.0</p>
+  <ul>
+    <li><strong></strong>  videojs-contrib-メディアソースをv4.2.0に更新
+      <ul>
+        <li>新しいセグメントを追加するときに無音を挿入するサポートが追加され、オーディオ SourceBuffer にギャップが生じる</li>
+      </ul>
+    </li>
+    <li>このファイルは使用されなくなったため、<strong>  hls-audio-track.js </strong>を削除します。</li>
+    <li>最新のすべてのブラウザ間でオーディオコーデックをオンザフライで切り替えるための幅広いサポートがあるので、オーディオコーデックのブラックリストを停止する</li>
+    <li><code translate="No">qualityLevels</code>ソース要素を含むビデオのセットアップを修正</li>
+    <li>設定ミスのための早期のエラー<code translate="No">overrideNative</code>   </li>
+  </ul>
+  <h4>2017年1月25日</h4>
+  <p>v5.0.0</p>
+  <ul>
+    <li>最新バージョンに unpkg を使用するように、問題テンプレートを更新しました</li>
+    <li>所有者による変更から保護するために、問題テンプレート JSBin のスナップショットを使用</li>
+    <li><code translate="No">fillBuffer_</code>すべてのデバウンスによって発生する可能性のある競合状態を修正しました<code translate="No">fillBuffers_</code>   
+      <ul>
+        <li><code translate="No">fillBuffer_</code>すべての呼び出しをへの呼び出しに変換しました<code translate="No">monitorBuffer_</code>   </li>
+        <li><code translate="No">monitorBuffer_</code><code translate="No">monitorBufferTick_</code>名前が変更され、500 ms バッファチェックタイマーループになります。</li>
+        <li><code translate="No">monitorBuffer_</code>のスケジュールを即時のタイマーにしました<code translate="No">monitorBufferTick_</code>   </li>
+      </ul>
+    </li>
+    <li>プレイリストの更新が削除された後もセグメントを処理できるようにしました
+      <ul>
+        <li>プレイリストの更新時に処理セグメント参照が変更されました</li>
+        <li>保留中のセグメントで正しいセグメント参照をテストしました</li>
+        <li>非同期モニタバッファの変更でのリベース後の到達不能なセグメントテストを修正</li>
+        <li>すべてのリクエスト（同期を含む）について、再生リストのメディアインデックスを更新しました</li>
+      </ul>
+    </li>
+    <li>進行イベントをバブルにしました
+      <ul>
+        <li>セグメントリクエストがプログレスイベントをトリガーする場合 (つまり、XHR2 がサポートされている)、それらを技術までバブルします。これにより、非常に低速な接続でもバッファリングが発生することが明確になります。</li>
+      </ul>
+    </li>
+    <li>Webワーカーで復号化を実行するとIE10ではサポートされなくなりました</li>
+    <li><code translate="No">mediaIndex</code>ライブストリーム中にプレイリストが更新されたときに一貫性が保たれるようにトラッキングを修正しました。
+      <ul>
+        <li><code translate="No">mediaIndex</code>ライブストリーム中にプレイリストが更新されたときの一貫性を保つようにトラッキングを修正しました</li>
+        <li><code translate="No">SegmentLoader#handleUpdateEnd_</code>変更したコードをすべて削除し<code translate="No">mediaIndex</code>   </li>
+        <li><code translate="No">SegmentLoader#playlist</code>フォローしやすくするために順序を変更しました</li>
+        <li>SegmentLoader と SegmentInfo <code translate="No">mediaIndexes</code>の両方に対するすべての変更は<code translate="No">SegmentLoader#playlist</code>   </li>
+        <li><code translate="No">mediaIndex</code>ライブプレイリストで適切なトラッキングのためのテストを追加</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2017年1月20日</h4>
+  <p>v4.1.1</p>
+  <ul>
+    <li>m3u8-パーサーがES3をサポートするように修正</li>
+  </ul>
+  <h4>2017年1月13日</h4>
+  <p>v4.1.0</p>
+  <ul>
+    <li><strong></strong>  m3u8-パーサーを2.0.0に、<strong>  videojs-contrib-media-sources </strong>を 4.1.4 に更新しました</li>
+    <li><a href="https://github.com/videojs/videojs-contrib-hls/pull/929">表示と品質レベルの追加</a> </li>
+  </ul>
+  <h4>2016年12月23日</h4>
+  <p>v4.0.3</p>
+  <ul>
+    <li>ライブでセグメントホップを修正する</li>
+    <li>互換性のないプレイリストを除外する場合、レガシー AVC コーデックを最新の同等品にマップする</li>
+    <li><strong> video.js </strong>を 5.15.1 に更新する</li>
+  </ul>
+  <h4>2016年11月29日</h4>
+  <p>v4.0.2</p>
+  <ul>
+    <li>シークでの過剰なセグメント負荷を修正
+      <ul>
+        <li>シークによってプレーヤーが読み込まれるセグメントが多すぎる場合を修正</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2016年11月23日</h4>
+  <p>v4.0.1</p>
+  <ul>
+    <li><strong>アップグレードの aes-decrypter </strong>を元に戻し、hLSE 復号化に webcrypto が使用できる場合
+      <ul>
+        <li>WebCryptoのsubtle-cryptoは、以前にJavaScriptのみの実装で機能していたセグメントを復号化できませんでした</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2016年11月21日</h4>
+  <p>v4.0.0</p>
+  <ul>
+    <li>SegmentLoader の中心にあるアルゴリズムを可能な限り簡素化
+      <ul>
+        <li>CurrentTime をバリアント間のセグメントに関連付けるのに役立つ同期ポイントの概念を導入しました。</li>
+        <li>詳細はこちら: <a href="https://www.brightcove.com/en/blog/2016/10/improving-hls-playback">  https://www.brightcove.com/en/blog/2016/10/improving-hls-playback </a> </li>
+      </ul>
+    </li>
+    <li><strong></strong>動画コントリブ・メディアソースを4.1.2に更新
+      <ul>
+        <li>リモートの TextTracks を適切に削除できるため使用開始</li>
+        <li>キューがnullの場合、トラックからキューを削除することを適切に処理しました</li>
+      </ul>
+    </li>
+    <li><strong>mux.js</strong>を 3.0.3 に更新しました
+      <ul>
+        <li>最初のフレームの compositionTimeStamp フラグメントの BaseMediaDecodeTime への適用を停止しました</li>
+        <li>保留中のトラックのオーディオデータがないことを考慮して、合体ストリームを修正しました</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2016年11月17日</h4>
+  <p>v3.6.13</p>
+  <ul>
+    <li>SystemBandWidth の概念を追加しました。ダウンロードから変換およびフラッシュまたはネイティブメディアソースへのデータの追加まで、システム全体の帯域幅（MB/秒）を測定します。
+      <ul>
+        <li>適応ビットレートの選択は、システム全体のパフォーマンスに基づきます</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2016年11月14日</h4>
+  <p>v3.6.12</p>
+  <ul>
+    <li><code translate="No">resolveUrl</code>   JavaScriptのみを使用するように変更</li>
+  </ul>
+  <h4>2016年11月11日</h4>
+  <p>v3.6.11</p>
+  <ul>
+    <li>reloadSourceOnErrors プラグインを更新しました:<code translate="No">getSource</code><code translate="No">undefined</code>戻り値や場合はソースを設定しようとしないでください<code translate="No">null</code>   </li>
+    <li><strong> resolve-url.js </strong>は現在 iframe を使用して、相対 URL を解決するために使用されるベース要素とアンカー要素を含むようになりました</li>
+  </ul>
+  <h4>2016年11月10日</h4>
+  <p>v3.6.10</p>
+  <ul>
+    <li>reloadSourceOnErrors プラグインを更新しました
+      <ul>
+        <li>エラー時にロードする新しいソースを提供するために使用できる GetSource 関数を渡すオプション</li>
+        <li>エラー間のデフォルトの最小時間を秒単位で上書きする機能を追加しました</li>
+        <li>プラグインが複数回初期化されたときにイベントバインディングをクリーンアップするようになりました</li>
+      </ul>
+    </li>
+    <li>ライブケースで正しいセグメントを比較し、<code translate="No">trimBuffer</code>正しくトリムするように修正</li>
+  </ul>
+  <h4>2016年11月9日</h4>
+  <p>v3.6.9</p>
+  <ul>
+    <li>エラーが発生した場合にソースを自動的にリロードできるプラグインを追加しました</li>
+    <li>最下位品質が現在使用中かどうかの確認時のエラーを修正しました</li>
+  </ul>
+  <h4>2016年11月9日</h4>
+  <p>v3.6.8</p>
+  <ul>
+    <li>GapSkipper がライブウィンドウからスリップした場合に、ライブウィンドウに戻れるように拡張されました。<strong>  GapSkipper </strong>を<strong>  PlaybackWatcher に変更しました</strong> </li>
+  </ul>
+  <h4>2016年11月3日</h4>
+  <p>v3.6.7</p>
+  <ul>
+    <li><strong></strong>  videojs-contrib-メディアソースを 4.0.5 に更新しました
+      <ul>
+        <li>ID3 と 608 キューの翻訳に関する問題を修正しました</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2016年10月21日</h4>
+  <p>v3.6.6</p>
+  <ul>
+    <li><code translate="No">setTimeout</code><code translate="No">timeupdate</code>イベントに頼るのではなくギャップスキッパーで使用する</li>
+    <li><strong></strong>  videojs-contrib-メディアソースを 4.0.4 に更新しました
+      <ul>
+        <li>各セグメントの init セグメントをビデオバッファに追加する</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2016年10月18日</h4>
+  <p>v3.6.4</p>
+  <ul>
+    <li>' リプレイ後に終了イベントが発生しないのを修正</li>
+    <li>videojs-contrib-media-sourcesを4.0.2に更新しました
+      <ul>
+        <li>I フレームをトリミングしないようにする場合は、FLV タグのみをトリムします。</li>
+        <li>Mux.js を 3.0.2 に更新しました
+          <ul>
+            <li>フレームを終了した後、H264Frame を null に設定します。</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2016年10月18日</h4>
+  <p>v3.6.3</p>
+  <ul>
+    <li>Videojs-contrib-メディアソースを 4.0.1 に更新
+      <ul>
+        <li>フラッシュフォールバックを修正</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2016年10月17日</h4>
+  <p>v3.6.2</p>
+  <ul>
+    <li>videojs-contrib-メディアソースを 4.0.0 に更新
+      <ul>
+        <li>オーディオトラックの変更に init セグメントデータを追加</li>
+        <li>Safari の実装に従うように ID3 の動作を正規化する</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2016年10月14日</h4>
+  <p>v3.6.1</p>
+  <ul>
+    <li>初期帯域幅オプションの 0 を許可する</li>
+    <li>Firefox 49 で MAAT のサポートを追加しました</li>
+    <li><strong> player.hls の廃止時の警告を修正しました</strong> </li>
+  </ul>
+  <h4>2016年9月27日</h4>
+  <p>v3.6.0</p>
+  <ul>
+    <li>Mux.js を 2.5.0 に更新しました
+      <ul>
+        <li>バージョン 1 の TFDT ボックスの生成のサポートが追加されました。</li>
+        <li>TS インスペクタを追加しました</li>
+      </ul>
+    </li>
+    <li>バンドル・コラプサを追加して、より小さなDISTファイルを作成する</li>
+    <li>fmp4のサポートを追加</li>
+    <li>ライブストリームに最初のセグメントをロードする不具合を修正</li>
+  </ul>
+  <h4>2016年8月24日</h4>
+  <p>v3.5.3</p>
+  <ul>
+    <li>videojs-contrib-mediasources 3.1.5 に更新
+      <ul>
+        <li>Mux.js を 2.4.2 に更新しました
+          <ul>
+            <li>Chromiumでキャプションパケットのソートが安定するように修正</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <h4>2016年8月17日</h4>
+  <p>v3.5.2</p>
+  <ul>
+    <li>ギャップスキッパーのアンダーフロー検出を変更して、スキップできるギャップのサイズに関する制限を取り除く</li>
+  </ul>
+  <h4>2016年8月16日</h4>
+  <p>v3.5.1</p>
+  <ul>
+    <li>フルスクリーンでイン/アウトするときに再生が停止する問題を修正</li>
+  </ul>
+  <h4>2016年8月15日</h4>
+  <p>v3.5.0</p>
+  <ul>
+    <li>のサポートを更新しました<code translate="No">#ext-x-cue-out</code>、<code translate="No">#ext-x-cue-in</code>、および<code translate="No">#ext-x-cue-out-cont</code>広告休憩の対象となる時間範囲にまたがる単一のキューを作成する</li>
+    <li>videojs-media-sources 3.1.4 に更新され、<code translate="No">FlashConstants</code>の値を増やし、チャンクインターバルごとにフラッシュにデータをプッシュする</li>
+  </ul>
+  <h4>2016年7月29日</h4>
+  <p>v3.4.0</p>
+  <ul>
+    <li>のサポートが追加されました<code translate="No">#ext-x-cue-out</code>、<code translate="No">#ext-x-cue-in</code>、および<code translate="No">#ext-x-cue-out-cont</code>特別なTextTrack経由</li>
+    <li>Chromeでの動画アンダーフロー動作に起因するギャップをスキップする機能を追加しました</li>
+  </ul>
+  <h4>2016年7月25日</h4>
+  <p>v3.3.0</p>
+  <ul>
+    <li>プレイリストが 1 つしか残っていない場合、または使用可能なレンディションが最も低い場合、セグメント要求がタイムアウトしなくなりました</li>
+    <li>最初のセグメントがフェッチされないことがあるバグを修正しました。</li>
+  </ul>
+  <h4>2016年7月15日</h4>
+  <p>v3.2.0</p>
+  <ul>
+    <li>ビデオまたはオーディオフレームがないために作成されたときに、ビデオエレメントのバッファ内のギャップをシークするアルゴリズムを追加しました</li>
+    <li>AES 復号化ロジックを独自のプロジェクトに移動しました</li>
+  </ul>
+  <h4>2016年6月9日</h4>
+  <p>v3.1.0</p>
+  <ul>
+    <li><code translate="No">representations()</code><code translate="No">HlsHandler</code>クラスの各インスタンスに関数を介した手動レンディション選択 API を追加</li>
+    <li>引き出し、m3u8 解析機能を独自のプロジェクトに移動しました https://github.com/videojs/m3u8-parser</li>
+  </ul>
+  <h4>2016年6月2日</h4>
+  <p>v3.0.5</p>
+  <ul>
+    <li>アダプティブビットレート選択アルゴリズムが、すでにサーバーからフェッチされていたメディアプレイリストに切り替えられない不具合を修正</li>
+  </ul>
+  <h4>2016年5月31日</h4>
+  <p>v3.0.4</p>
+  <ul>
+    <li>複数の代替オーディオトラックのサポートを追加</li>
+    <li>新しいクラス SegmentLoader には、すべてのバッファメンテナンスとセグメントフェッチロジックが含まれています</li>
+    <li>新しいクラス sourceUpdater は、SourceBuffer の非同期操作の状態を追跡し、soureBuffer がビジー状態の場合に、今後の実行のために操作をキューに格納します</li>
+    <li>新しいクラス masterPlayListController は、マスタープレイリストの操作をカプセル化し、メディアプレイリストとセグメントローダーを調整するようになりました</li>
+    <li>フェッチとバッファのメンテナンスに関するバグ修正</li>
+  </ul>
+  <h4>2016年3月11日</h4>
+  <p>v2.0.1</p>
+  <ul>
+    <li>SourceHandler の ES6 バージョンの最初のリリース</li>
+    <li><a href="https://github.com/videojs/generator-videojs-plugin"></a>ジェネレータ-videojs-pluginプロジェクトによるすべての新しいリント/ビルド/テストセットアップ</li>
+  </ul>
+  <h4>2016年3月4日</h4>
+  <p id="toc_1">1.13.1</p>
+  <ul>
+    <li>Video.js 5.x との互換性のために、技術から SourceHandler に変換されました</li>
+    <li>フラッシュベースのフォールバック機能を備えたメディアソース拡張機能ベースの再生エンジンを実装しました</li>
+    <li>Transmuxer を書き直して、それ自身のプロジェクトに移動しました<a href="https://github.com/videojs/mux.js">  mux.js </a> </li>
+    <li>608/708 キャプションのサポートを追加</li>
+  </ul>
+  <h4>2015年7月29日</h4>
+  <p id="toc_2">0.17.6</p>
+  <ul>
+    <li>ライブポイントで自動再生します。ライブ id3 キュー挿入を修正します。( <a href="https://github.com/videojs/videojs-contrib-hls/pull/353">ビュー</a> )</li>
+  </ul>
+  <h4>2015年7月14日</h4>
+  <p id="toc_3">0.17.5</p>
+  <ul>
+    <li>メディアシーケンスがゼロで開始すると仮定しない（<a href="https://github.com/videojs/videojs-contrib-hls/pull/346">表示</a>）</li>
+    <li>オーディオまたはビデオのみのストリーム ( <a href="https://github.com/videojs/videojs-contrib-hls/pull/348">表示</a> ) でエラーを修正する</li>
+  </ul>
+  <h4>2015年7月12日</h4>
+  <p id="toc_4">0.17.4</p>
+  <ul>
+    <li>セグメント間のシークを修正します。期間の計算を改善します。( <a href="https://github.com/videojs/videojs-contrib-hls/pull/339">ビュー</a> )</li>
+  </ul>
+  <h4>2015年6月29日</h4>
+  <p id="toc_5">0.17.3</p>
+  <ul>
+    <li>ビデオ再生時間の計算が改善されました。( <a href="https://github.com/videojs/videojs-contrib-hls/pull/321">ビュー</a> )</li>
+    <li>クランプはシーク可能範囲 ( <a href="https://github.com/videojs/videojs-contrib-hls/pull/327">ビュー</a> ) にシークします</li>
+    <li>バリアントをフィルタリングする場合 ( <a href="https://github.com/videojs/videojs-contrib-hls/pull/326">ビュー</a> )、プレーヤーのディメンションに GetComputedStyle を使用します</li>
+    <li>sauceLabs ( <a href="https://github.com/videojs/videojs-contrib-hls/pull/323">ビュー</a> ) で実行される機能テストを追加する</li>
+  </ul>
+  <h4>2015年6月15日</h4>
+  <p id="toc_6">0.17.2</p>
+  <ul>
+    <li>ライブストリーム ( <a href="https://github.com/videojs/videojs-contrib-hls/pull/308">ビュー</a> ) でのシークを修正する</li>
+  </ul>
+  <h4>2015年6月8日</h4>
+  <p id="toc_7">v0.17.1</p>
+  <ul>
+    <li>ライブビデオをプリロードしない（<a href="https://github.com/videojs/videojs-contrib-hls/pull/299">表示</a>）</li>
+  </ul>
+  <h4>2015年6月5日</h4>
+  <p id="toc_8">0.17.0</p>
+  <ul>
+    <li>ライブストリームの seekable を実装します。ライブストリームのインバンドメタデータのタイミングを修正しました。( <a href="https://github.com/videojs/videojs-contrib-hls/pull/295">ビュー</a> )</li>
+  </ul>
+  <h4>2015年5月29日</h4>
+  <p id="toc_9">v0.16.1</p>
+  <ul>
+    <li>プレイリストを更新するときに、不必要にライブポイントにリセットしないでください。プレイリストローダーのタイムアウトをクリーンアップします。( <a href="https://github.com/videojs/videojs-contrib-hls/pull/274">ビュー</a> )</li>
+    <li>初期IDRのないセグメントが最初に 4:3 に表示されないようにする ( <a href="https://github.com/videojs/videojs-contrib-hls/pull/272">ビュー</a> )</li>
+    <li>SPS がメタデータ・タグを挿入するまで待ちます。( <a href="https://github.com/videojs/videojs-contrib-hls/pull/280">ビュー</a> )</li>
+    <li>プレイリストの空白をトリミングします。( <a href="https://github.com/videojs/videojs-contrib-hls/pull/282">ビュー</a> )</li>
+    <li>NITでTSファイルの再生を許可します。PCR PID について警告しないでください。( <a href="https://github.com/videojs/videojs-contrib-hls/pull/284">ビュー</a> )</li>
+    <li>帯域幅が変更されると、より高速な品質のスイッチ。( <a href="https://github.com/videojs/videojs-contrib-hls/pull/285">ビュー</a> )</li>
+    <li>シーク後に一時的に歪んだ表示を修正します。( <a href="https://github.com/videojs/videojs-contrib-hls/pull/290">ビュー</a> )</li>
+  </ul>
+  <h4 id="toc_10">0.16.0</h4>
+  <ul>
+    <li>サポートプリロード=なし</li>
+  </ul>
+  <h4 id="toc_11">0.15.0</h4>
+  <ul>
+    <li>すべての ID3 フレームを公開し、188バイトを超えるタグを処理する</li>
+  </ul>
+  <h4 id="toc_12">0.14.0</h4>
+  <ul>
+    <li>HLSE のパフォーマンスの向上</li>
+  </ul>
+  <h4 id="toc_13">0.13.0</h4>
+  <ul>
+    <li>オーディオ/ビデオ同期の改善</li>
+    <li>ライブ、HLSE、および不連続性の修正</li>
+    <li>内部メソッドの名前を変更して、意図した可視性を明確にする</li>
+  </ul>
+  <h4 id="toc_14">0.12.0</h4>
+  <ul>
+    <li>AES-128 暗号化を使用したカスタム IV のサポート</li>
+  </ul>
+  <h4 id="toc_15">0.11.0</h4>
+  <ul>
+    <li>埋め込まれた ID3 タグは、インバンドメタデータトラックとして公開されます</li>
+  </ul>
+  <h4 id="toc_16">v0.10.0</h4>
+  <ul>
+    <li>楽観的な初期ビットレート選択</li>
+  </ul>
+  <h4 id="toc_17">0.9.0</h4>
+  <ul>
+    <li>セグメントレベル AES-128 暗号化をサポート</li>
+  </ul>
+  <h4 id="toc_18">v0.8.0</h4>
+  <ul>
+    <li>外部 X 不連続のサポート</li>
+  </ul>
+  <h4 id="toc_19">v0.7.0</h4>
+  <ul>
+    <li>HLS プラグインを技術に変換する</li>
+  </ul>
+  <h4 id="toc_20">v0.6.0</h4>
+  <ul>
+    <li>プレイリストの読み込みをリファクタリング</li>
+    <li>カルマ経由でテストを追加する</li>
+  </ul>
+  <h4 id="toc_21">v0.5.0</h4>
+  <ul>
+    <li>Cookie ベースのコンテンツ保護のサポート（を参照<code translate="No">withCredentials</code>）</li>
+  </ul>
+  <h4 id="toc_22">v0.4.0</h4>
+  <ul>
+    <li>ライブストリームのサポート</li>
+  </ul>
+  <h4 id="toc_23">v0.3.0</h4>
+  <ul>
+    <li>高ビットレートストリームのパフォーマンス修正</li>
+  </ul>
+  <h4 id="toc_24">v0.2.0</h4>
+  <ul>
+    <li>基本的な再生とアダプティブビットレート選択</li>
+  </ul>
+  <h4 id="toc_25">v0.1.0</h4>
+  <ul>
+    <li>初期リリース</li>
+  </ul>
+</section>
+</article>
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">ページコンテンツ</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<div class="last-updated">
+  ページの最終更新日30 Sep 2021
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+        <img src="https://support.brightcove.com/site-assets/images/site/SVG/COVE004_Brightcove_Logo_093020_RGB_KO.svg" class="bc-footer-logo" alt="Brightcove">
+
+        <h2>ブライトコーブのサポート</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">システムステータス</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">サポートへのお問い合わせ</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">ドキュメンテーション</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>トレーニング</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">オンラインコース</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">コースに登録する</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">ブライトコーブ大学</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>ブライトコーブ</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">Brightcove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">お問合せ</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> ブライトコーブ株式会社すべての権利を保有しています。</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">プライバシー</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">利用規約</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><i data-feather="linkedin" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><i data-feather="twitter" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i data-feather="facebook" style="color:#8E9093;height: 1.25rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script translate="no">
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/learning-paths/learning-paths.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/sajari-reindex.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <script translate="no">
+  feather.replace()
+</script>
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style translate="no">
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>

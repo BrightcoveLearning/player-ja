@@ -1,0 +1,337 @@
+---
+title: Google アナリティクス プラグイン
+description: 'このトピックでは、Google アナリティクス プラグインの使用方法と、Studioを使用した実装方法、およびカスタムコーディングによる実装方法について学びます。'
+parent: Plugins
+---
+
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <aside class="bcls-aside bcls-aside--warning">以下の <strong>重要</strong> な項目に注意して下さい:
+      <ul>
+        <li>Brightcove Player Google アナリティクス プラグインの最新バージョンであるバージョン 2.1.x およびそれ以降のバージョンは、Google アナリティクス 4（「新バージョン」）をサポートします。</li>
+        <li>このプラグインを使用するには、Brightcove Player バージョン 7.x 以降を使用する必要があります。</li>
+        <li>Googleユニバーサルアナリティクス（以下、旧バージョン）は、2023年7月1日にサービス終了となります。</li>
+        <li>このドキュメントでは、Google アナリティクス 4の設定に焦点を当て、オプションでユニバーサル アナリティクスも設定することができます。これはデュアルタギングと呼ばれています。</li>
+        <li>現時点で、プラグインの設定は、Studioの<strong>JSON エディタ</strong> のみで行います。UIの設定は、これまで通りユニバーサル アナリティクス用になります。</li>
+        <li>ユニバーサル アナリティクスのみの設定をする場合、<a href="/analytics/ga-self-configure.html">Google アナリティクスの自己設定</a> ドキュメントを参照して下さい。</li>
+      </ul>
+    </aside>
+    <h2 id="Overview">概要</h2>
+    <p>Brightcove Google アナリティクス プラグインは、Google アナリティクス にデータを送信する機能を提供します。なお、このプラグインは、Google アナリティクス 4 と従来の ユニバーサル アナリティクス の両方をサポートしています。このドキュメントには、7 つの主要なコンテンツ セクションが含まれています：</p>
+    <ul>
+      <li><a href="#Requirements">必要条件</a>: Google アナリティクス プラグイン v2.1.0以降を使用するための条件。</li>
+      <li><a href="#Implement_using_Players_module">Playersモジュールによる実装</a>: Studioの <strong>Players</strong> モジュールを使用してプラグインを実装するための手順です。なお、現時点で、Playersモジュールの設定は <strong>JSON エディタ</strong> のみから行う必要があります。ユーザーインターフェイスのオプションは、ユニバーサル アナリティクス専用になります。</li>
+      <li><a href="#Implement_using_code">コードによる実装</a>: HTMLページにプラグインを実装するための手順になります。</li>
+      <li><a href="#Options">オプション</a>: プラグインで利用可能な設定オプションです。</li>
+      <li><a href="#GA4_events_and_custom_dimensions">GA4 イベントとカスタム ディメンション</a>: Google アナリティクスに送信するためのGA4データオプションです。</li>
+      <li><a href="#GA4_and_UA_dual_tagging_example_configuration">GA4 と UAのデュアルタギングの設定例</a>: Google アナリティクス 4とユニバーサル アナリティクスの両方に対応する設定オプションで、<em>デュアルタギング</em>と呼ばれています。</li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Requirements">必要条件</h2>
+    <p>Brightcove Player Google アナリティクス Plugin v2.1.0 以降には、以下のものが必要です：</p>
+    <ul>
+      <li>Brightcove Player v7.0.0 およびそれ以降のバージョン</li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Implement_using_Players_module">Playersモジュールによる実装</h2>
+    <!--     ONCE UI FOR GA$ IS IN STUDIO< UPDATE THIS SECTION
+  
+  <p>To implement the Google アナリティクス plugin using the <strong>Players</strong> module. Note that support for GA4 and dual tagging is only available for self configuration at the current time via the Studio UI. Hence, if you wish to use GA4 or dual tagging, you need to follow the steps to alter the player's JSON configuration, as shown in steps 7-10. If you wish to use only UA, you need not do those extra steps. For example configurations see the <a href="#GA4_and_UA_example_configurations">GA4 and UA example configurations</a> section below.</p>
+    <ol class="bcls-tasklist">
+      <li>In Studio select the <strong>Players</strong> module.</li>
+      <li>Click the player to which you wish to add the Google アナリティクス plugin.</li>
+      <li>In the Player's property screen select:
+        <ol type="a">
+          <li><strong>Third-Party アナリティクス -> Google アナリティクス</strong></li>
+          <li>Check <strong>Enable Google アナリティクス</strong></li>
+          <li>Click <strong>Sign in to Google Account</strong></li>
+        </ol>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/plugins/google-アナリティクス-plugin/select-ga.webp" alt="enable Google アナリティクス">
+        </figure>
+      </li>
+      <li>Complete the sign in process by entering information for your Google account and which Google アナリティクス account to send data.</li>
+      <li>Finish the configuration using the provided form.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/plugins/google-アナリティクス-plugin/studio-configuration2.png" alt="configuration">
+        </figure>
+      </li>
+      <li>Click <strong>Save</strong>. Publish your player if not completing the rest of the rest of the steps.</li>
+      <li>
+        <aside class="bcls-aside bcls-aside--information">You need to do the rest of the steps in this section ONLY if you are configuring for GA4 or dual tagging.</aside>
+        In the left-navigation, click <strong>JSON editor</strong>.
+      </li>
+      <li>You need to make the following changes:
+        <ul>
+          <li>Change the version to <strong>2.x</strong>: <code>"version": "2.x",</code></li>
+          <li>Update the <strong>options</strong> and <strong>events to track</strong> as desired. See the <a href="#GA4_events_and_custom_dimensions">GA4 events and custom dimensions</a> section below for details.</li>
+          <li>Change the <strong>tracker</strong> to your GA4 tracker ID.</li>
+        </ul>
+        Example:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/plugins/google-アナリティクス-plugin/json-config.webp" alt="json editor">
+        </figure>
+      </li>
+      <li>Click <strong>Save</strong> and publish your player.</li> -->
+
+    <!-- Remove this section once the Studio UI is up to date -->
+    <ol class="bcls-tasklist">
+      <li>Studioで <strong>Players</strong> モジュールを選択します。</li>
+      <li>Google アナリティクス プラグインを追加したいプレーヤーをクリックします。</li>
+      <li>Playerのプロパティ画面で、左側のナビゲーションから、 <strong>JSON エディタ</strong>を選択します。</li>
+      <li><strong>プラグイン</strong> セクションに、GAプラグインの以下の標準設定を追加します（コピー＆ペーストしやすいようにここに設定します）:
+        <pre class="line-numbers"><code class="language-javascript" translate="No">{
+  "registry_id": "@brightcove/videojs-bc-ga",
+  "version": "2.x",
+  "options": {
+    "paramsToTrackGA4": [
+      "account",
+      "platform_version"
+      "player",
+      "range",
+      "seconds_viewed",
+      "session",
+      "tags",
+      "video_duration",
+    ],
+    "eventsToTrack": {
+      "ad_end": "Ad Ended"
+      "ad_start": "Ad Started",
+      "error": "Player Errors",
+      "play_request": "Play Request",
+      "player_load": "Player Load",
+      "video_engagement": "Video Engagement",
+      "video_impression": "Video Impression",
+      "video_view": "Video View",
+    },
+    "trackerGA4": "G-WG9CBF4C3S"
+  }
+}</code></pre>
+      </li>
+      <li>設定された全てのJSON形式を確認するには、以下を参考にしてください:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publish/copied-code-details/json-editor.webp" alt="json editor">
+        </figure>
+      </li>
+      <li>GoogleアナリティクスをUAとGA4の両方に設定したい場合は、後述の <a href="#GA4_and_UA_dual_tagging_example_configuration">GA4とUAのデュアルタギング設定例</a>で紹介する設定例を使用して下さい。</li>
+      <li>プレーヤーを保存して公開します。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Implement_using_code">コードによる実装</h2>
+    <p>プラグインを実装するには、プレーヤーはプラグインコードの場所、スタイルシートの場所（必要な場合）、プラグイン名、プラグイン設定オプションを知る必要があります。Google アナリティクスのプラグインの場合：</p>
+    <ul>
+      <li>JavaScriptプラグインコード（今回はCSS不要）の設置場所は以下になります：
+        <pre class="line-numbers">
+        <code class="language-javascript" translate="No">https://players.brightcove.net/videojs-bc-ga/2/videojs-bc-ga.min.js</code></pre>
+      </li>
+      <li>プラグイン名は <code translate="No">bcGa</code>です。</li>
+      <li>標準の設定オプションは、以下のコードに示されています。</li>
+    </ul>
+
+    <p>以下は、プレーヤーのAdvanced（埋め込み）コードの実装を使用して、Google アナリティクス プラグインをプレーヤーの単一インスタンスに関連付ける例です。</p>
+    <ul>
+      <li>1行目: <code translate="No">video-js</code> に <code translate="No">id</code> 属性を付与し、何らかの値（この例では <strong>myPlayerID</strong>)を指定します。</li>
+      <li>9行目: <code translate="No">script</code> タグを使用して、プラグインのJavaScriptをHTMLページの <code translate="No">body</code> に含めます。</li>
+      <li>13行目: プレーヤーへの参照を作成します。</li>
+      <li>14-35行目: プラグインを初期化し、カスタムオプションを渡します。</li>
+    </ul>
+    <pre class="line-numbers" data-start="1">
+      <code class="language-html" translate="No">  &lt;video-js id="myPlayerID"
+          data-account="1752604059001"
+          data-player="decfdaf5-0a6e-43f6-82d3-39d125c413c4"
+          data-embed="default"
+          data-video-id="4077874637001"
+          controls=""&gt;&lt;/video-js&gt;
+        &lt;script src="https://players.brightcove.net/1752604059001/decfdaf5-0a6e-43f6-82d3-39d125c413c4_default/index.min.js"&gt;&lt;/script&gt;
+      
+        &lt;script type="text/javascript" src="https://players.brightcove.net/videojs-bc-ga/2/videojs-bc-ga.min.js"&gt;&lt;/script&gt;
+      
+        &lt;script type="text/javascript"&gt;
+          videojs.getPlayer('myPlayerID').ready(function() {
+            var myPlayer = this;
+            myPlayer.bcGa({
+              "registry_id": "@brightcove/videojs-bc-ga",
+              "options": {
+                "paramsToTrackGA4": [
+                  "account",
+                  "platform_version"
+                  "player",
+                  "range",
+                  "seconds_viewed",
+                  "session",
+                  "tags",
+                  "video_duration",
+                ],
+                "eventsToTrack": {
+                  "ad_end": "Ad Ended"
+                  "ad_start": "Ad Started",
+                  "error": "Player Errors",
+                  "play_request": "Play Request",
+                  "player_load": "Player Load",
+                  "video_engagement": "Video Engagement",
+                  "video_impression": "Video Impression",
+                  "video_view": "Video View",
+                }
+                "trackerGA4": "GA-123456-1"
+              }
+          })
+        });
+        &lt;/script&gt;</code></pre>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Options">オプション</h2>
+    <p>以下の項目は、Google アナリティクス プラグインを設定する際に使用するプラグインオ プションです。</p>
+    <ul>
+      <li><strong>tracker</strong>: Google アナリティクス トラッキング ID.</li>
+      <li><strong>eventsToTrack</strong>: 送信するイベントと、そのイベントに使用される名前を列挙した配列。
+        <ul>
+          <li>例: <code>"player_load": "My name for player load event"</code></li>
+        </ul>
+      </li>
+      <li><strong>paramsToTrack</strong>: イベントに含めるべきパラメータを列挙したオブジェクト。
+        <aside class="bcls-aside bcls-aside--information language-editable">注: これらのパラメータは、Google アナリティクス UIでカスタム ディメンションとして追加されます。このタスクの手順は、このドキュメントの後半に続きます。</aside>
+      </li>
+      <li><strong>debug</strong>: GA デバッグ URL を有効にし、コンソールトレースを可視化するには<code>true</code> を使用します。<strong><em>これは本番環境では使用しないでください。</em></strong></li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="GA4_events_and_custom_dimensions">GA4 イベントとカスタムディメンション</h2>
+    <p>プレーヤーの <code>analytics_event</code> や <code>analytics-beacon</code> イベントで使用されるイベント名であれば何でも使用可能ですが、以下のものはGAプラグインで特別な取り扱いがあります:</p>
+    <ul>
+      <li>ad_end</li>
+      <li>ad_start</li>
+      <li>error</li>
+      <li>play_request</li>
+      <li>player_load</li>
+      <li>video_engagement</li>
+      <li>video_impression</li>
+      <li>video_view</li>
+    </ul>
+    <p>以下は、使用可能なカスタム ディメンションです:</p>
+    <ul>
+      <li>account</li>
+      <li>platform_version</li>
+      <li>player</li>
+      <li>range</li>
+      <li>seconds_viewed</li>
+      <li>session</li>
+      <li>tags</li>
+      <li>video_duration</li>
+    </ul>
+    <p>Google アナリティクスでカスタム ディメンションとして追加したパラメータは、イベントと関連付けられます。以下のパラメータは、すべてのイベントに共通です:</p>
+    <ul>
+      <li>account</li>
+      <li>player</li>
+      <li>session</li>
+      <li>tags</li>
+      <li>version</li>
+    </ul>
+    <p><code>video_engagement</code> イベントには、上記の5つのパラメータに加え、以下のものが追加されます:</p>
+    <ul>
+      <li>range</li>
+      <li>seconds_viewed</li>
+      <li>video_duration</li>
+    </ul>
+
+
+    <h4>カスタム ディメンションの作成</h4>
+    <aside class="bcls-aside bcls-aside--information language-editable">注: カスタムイベントはGoogle アナリティクスで自動的に作成されるため、この作業を行う必要はありません。</aside>
+    <p>使用するカスタム ディメンションをそれぞれ作成する必要があります。次のことに注意してください：:</p>
+    <ul>
+      <li>各カスタム ディメンションの作成時に、 <strong>範囲</strong> を選択するように要求されます。これらのカスタム ディメンションには、 <samp>Event</samp> 値を使用します。</li>
+      <li>ディメンションを作成する際に、より親しみやすい名前を選択することができます。例えば、次のように考えてください:
+        <ul>
+          <li><code translate="no">video_duration</code> のカスタム ディメンジョンを作成する際、レポートでより分かりやすい名前を使用したいため、単に <strong>Duration</strong> と名付けることができます。</li>
+        </ul>
+      </li>
+    </ul>
+    <p>以下の手順で、Google アナリティクス UIにカスタム ディメンションを作成します（手順は、プロパティを作成したことを前提としています）:</p>
+    <ol class="bcls-tasklist">
+      <li>Google アナリティクス アカウントにログインします。</li>
+      <li>GA のページにて:
+        <ol type="a">
+          <li>UIの左下にある<strong>管理</strong> (歯車アイコン) をクリックします。</li>
+          <li><strong>プロパティ</strong> 欄で、<strong>カスタム ディメンション</strong> をクリックします。
+            <figure class="bcls-figure">
+              <img class="bcls-image" src="/assets/images/publish/copied-code-details/ga-ui-custom-definitions.webp" alt="custom dimensions">
+            </figure>
+          </li>
+        </ol>
+      </li>
+      <li><strong>カスタム ディメンションの作成</strong> をクリックします。
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publish/copied-code-details/create-custom-dimensions.webp" alt="">
+        </figure>
+      </li>
+      <li><strong>paramsToTrackGA4</strong> 配列にリストされた各パラメータについて、カスタム ディメンションを作成します:
+        <ul>
+          <li>account</li>
+          <li>platform_version</li>
+          <li>player</li>
+          <li>range</li>
+          <li>seconds_viewed</li>
+          <li>session</li>
+          <li>tags</li>
+          <li>video_duration</li>
+        </ul>
+        <p>配列の各パラメーターについて、フォームを完成させます:</p>
+        <ul>
+          <li><strong>ディメンション名</strong>: パラメータのフレンドリーな名前。</li>
+          <li><strong>範囲</strong>: Brightcove GAプラグインでは常に <em>イベント</em> です。</li>
+          <li><strong>説明</strong>: 適切な説明を加えます。</li>
+          <li><strong>イベント パラメータ</strong>: 上記のパラメータから1つ選んでください。</li>
+        </ul>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/publish/copied-code-details/new-custom-dimension.webp" alt="">
+        </figure>
+      </li>
+      <p>これで、これらのカスタム ディメンションは、Google アナリティクスのレポートにおいて、適切なイベントに関連付けられました。</p>
+    </ol>
+    <p>Google アナリティクスのUIの使い方については、以下をご参照ください:</p>
+    <ul>
+      <li><a href="https://support.google.com/analytics/answer/10089681">次世代のアナリティクス、Google アナリティクス 4 のご紹介</a></li>
+      <li><a href="https://support.google.com/analytics/answer/9304153">アナリティクスで新しいウェブサイトまたはアプリのセットアップを行う</a></li>
+      <li><a href="https://support.google.com/analytics/answer/9744165">Google アナリティクス 4 プロパティを追加する（アナリティクスを導入済みのサイトの場合）</a></li>
+      <li><a href="https://support.google.com/analytics/answer/10075209?hl=ja">[GA4] カスタム ディメンションとカスタム指標</a>: イベント パラメータやユーザー プロパティからディメンションやメトリックスを作成し、レポートや探索でデータに簡単にアクセスできるようにします。</li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="GA4_and_UA_dual_tagging_example_configuration">GA4とUAのデュアルタギングの設定例</h2>
+    <p>現時点（2023年初頭）では、Google アナリティクス 4とユニバーサル アナリティクスの両方が有効です。以下は、Google アナリティクス 4とユニバーサル アナリティクスの両方が機能するようなデュアルタグの例になります。</p>
+    <h4>デュアルタギング (Google アナリティクス 4 と ユニバーサル アナリティクス)</h4>
+    <pre class="line-numbers" data-start="1">
+<code class="language-html" translate="No">{
+  "registry_id": "@brightcove/videojs-bc-ga",
+  "options": {
+    "paramsToTrack": {
+    "video_seconds_viewed": "dimension1",
+    "range": "dimension2",
+    "video_duration": "dimension3",
+    "player": "dimension4",
+    "session": "dimension5",
+    ...
+    },
+    "paramsToTrackGA4": ["seconds_viewed","range","video_duration", "player", "session",...],
+    "eventsToTrack": {
+      "video_impression": "Video Impression",
+      "play_request": "Play Request",
+      "video_engagement": "Video Engagement",
+      ...
+    },
+    "trackerGA4": "GA-123456-1",
+    "tracker": "UA-123456-1"
+  }
+}</code></pre>
+  </section>
+
+</article>
