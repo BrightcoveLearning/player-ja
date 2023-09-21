@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="このトピックでは、Overlay プラグインの使用方法と、Studio での実装方法と、カスタムコーディングによる実装方法について学習します。オーバーレイプラグインは、単純なメッセージを半透明オーバーレイとしてプレーヤーの上に表示するために使用できます。「">
   
-  <title>「オーバーレイプラグインを表示」</title>
+  <title>オーバーレイ表示プラグイン</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -63,7 +63,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         
       <li class="breadcrumb-item"><a href="/plugins/">Plugins</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">「オーバーレイプラグインを表示」</li>
+      <li class="breadcrumb-item active" aria-current="page">オーバーレイ表示プラグイン</li>
     </ol>
   </nav>
 </header>
@@ -71,43 +71,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <div class="row">
       <div class="col-sm-3 left-side-bar">
 				<select id="site_select" class="bcls-select" style="margin-left: 1rem;">
-					<option value="">ブライトコーブのその他のドキュメント</option>
+					<option value="">Brightcoveのその他のドキュメント</option>
 					 
 							<option value="https://support.brightcove.com">ドキュメンテーションホーム</option>
 						  
-							<option value="">-ビデオクラウド-</option>
+							<option value="">-Video Cloud-</option>
 						  
-							<option value="https://studio.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドスタジオ</option>
+							<option value="https://studio.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Studio</option>
 						  
-							<option value="https://player.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブプレイヤー開発</option>
+							<option value="https://player.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Player 開発</option>
 						  
-							<option value="https://apis.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドプラットフォームAPI</option>
+							<option value="https://apis.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud プラットフォームAPI</option>
 						  
-							<option value="https://sdks.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドデバイスSDK</option>
+							<option value="https://sdks.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud デバイスSDK</option>
 						  
 							<option value="https://integrations.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;統合とCMSコネクタ</option>
 						  
-							<option value="https://general.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドの一般情報</option>
+							<option value="https://general.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud の一般情報</option>
 						  
 							<option value="">-ビデオエッセンシャル-</option>
 						  
-							<option value="https://beacon.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブビーコン</option>
+							<option value="https://beacon.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Beacon</option>
 						  
-							<option value="https://live.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブライブ</option>
+							<option value="https://live.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Live</option>
 						  
 							<option value="https://zencoder.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp; Zencoder</option>
 						  
-							<option value="">-ビデオクラウドアドオン-</option>
+							<option value="">-Video Cloudアドオン-</option>
 						  
-							<option value="https://campaign.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブキャンペーン</option>
+							<option value="https://campaign.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Campaign</option>
 						  
-							<option value="https://engage.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブエンゲージ</option>
+							<option value="https://engage.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Engage</option>
 						  
-							<option value="https://gallery.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブギャラリー</option>
+							<option value="https://gallery.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Gallery</option>
 						  
-							<option value="https://studio.support.brightcove.com/social/index.html">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブソーシャル</option>
+							<option value="https://studio.support.brightcove.com/social/index.html">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Social</option>
 						  
-							<option value="https://ssai.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブSSAI</option>
+							<option value="https://ssai.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove SSAI</option>
 						 
 				</select>
         <nav class="sidenav" id="side_nav">
@@ -142,7 +142,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
               <h5 class="submenu-header"><a href="/basics/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;基本を学ぼう</a></h5>
               <ul class="sidenav-submenu" style="display:none;">
                  
-                    <li><a href="/basics/developer-basics-advanced-player-code.html">アドバンスプレイヤーコード</a></li>
+                    <li><a href="/basics/developer-basics-advanced-player-code.html">アドバンスプレーヤーコード</a></li>
                     
                     <li><a href="/basics/developer-basics-autoplaying-video.html">ビデオの自動再生</a></li>
                     
@@ -156,7 +156,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     
                     <li><a href="/training/developer-basics-videos.html">開発者向け基本ビデオ</a></li>
                     
-                    <li><a href="/basics/developer-basics-generating-player-code.html">プレイヤーコードを生成しています</a></li>
+                    <li><a href="/basics/developer-basics-generating-player-code.html">プレーヤーコードを生成しています</a></li>
                     
                     <li><a href="/basics/developer-basics-preparing-write-code.html">コードを書く準備をする</a></li>
                    
@@ -167,7 +167,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                  
                     <li><a href="/references/bcp7-migration-guide.html">Brightcove Player 7 Migration Guide</a></li>
                     
-                    <li><a href="/brightcove-player/current-release/index.html">ブライトコーブプレイヤー API ドキュメント</a></li>
+                    <li><a href="/brightcove-player/current-release/index.html">Brightcoveプレーヤー API ドキュメント</a></li>
                     
                     <li><a href="/references/brightcove-player-cookies.html">Brightcove Playerクッキー</a></li>
                     
@@ -185,7 +185,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     
                     <li><a href="/references/player-metadata-bcinfo.html">bcinfo からのプレーヤーメタデータ</a></li>
                     
-                    <li><a href="/brightcove-player/current-release/Player.html">プレイヤーメソッド/イベント API</a></li>
+                    <li><a href="/brightcove-player/current-release/Player.html">プレーヤーメソッド/イベント API</a></li>
                     
                     <li><a href="/references/guide-playlist-api.html">プレイリスト API ガイド</a></li>
                     
@@ -220,8 +220,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     
                     <li><a href="/plugins/configuring-brightcove-player-drm.html">DRM</a></li>
                     
-                    <li><a href="/plugins/google-analytics-plugin.html">Google アナリティクス プラグイン</a></li>
-                    <li><a href="/plugins/google-tag-manager-plugin-brightcove-player.html">グーグルタグマネージャ</a></li>
+                    <li><a href="/plugins/google-analytics-plugin.html">Google Analytics プラグイン</a></li>
+                    <li><a href="/plugins/google-tag-manager-plugin-brightcove-player.html">Google Tag Manager</a></li>
                     
                     <li><a href="/plugins/hls-plugin.html">HLS</a></li>
                     
@@ -251,7 +251,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     
                     <li><a href="/plugins/tealium-plugin-brightcove-player.html">Tealium タグマネージャ</a></li>
                     
-                    <li><a href="/plugins/thumbnails-plugin.html">サムネイル探し</a></li>
+                    <li><a href="/plugins/thumbnails-plugin.html">サムネイル シーク</a></li>
                     
                     <li><a href="/plugins/video-seo-schema-generator-plugin.html">ビデオ SEO スキーマジェネレータ</a></li>
                    
@@ -298,7 +298,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     
                     <li><a href="/advertising/using-player-enhancements-live-ssai-brightcove-player.html">ライブSSAIのプレーヤー拡張機能の使用</a></li>
                     
-                    <li><a href="/advertising/video-cloud-ssai-ad-tag-validation.html">ビデオクラウド SSAI 広告タグの検証</a></li>
+                    <li><a href="/advertising/video-cloud-ssai-ad-tag-validation.html">Video Cloud SSAI 広告タグの検証</a></li>
                    
               </ul>
               
@@ -317,7 +317,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     
                     <li><a href="https://studio.support.brightcove.com/publish/choosing-correct-embed-code.html">正しい埋め込みコードの選択</a></li>
                     
-                    <li><a href="/publish/delaying-player-instantiation.html">プレイヤーのインスタンス化の遅延</a></li>
+                    <li><a href="/publish/delaying-player-instantiation.html">プレーヤーのインスタンス化の遅延</a></li>
                     
                     <li><a href="/publish/pre-release-player.html">プレリリースプレーヤー</a></li>
                     
@@ -325,7 +325,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     
                     <li><a href="/publish/using-non-brightcove-player.html">Brightcove以外のプレーヤーを使用する</a></li>
                     
-                    <li><a href="https://studio.support.brightcove.com/publish/using-multiple-players-one-page.html">1ページで複数のプレイヤーを使用する</a></li>
+                    <li><a href="https://studio.support.brightcove.com/publish/using-multiple-players-one-page.html">1ページで複数のプレーヤーを使用する</a></li>
                     
                     <li><a href="https://studio.support.brightcove.com/publish/using-reference-ids.html">参照 ID の使用</a></li>
                     
@@ -356,11 +356,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     
                     <li><a href="/plugins/playerplugin-version-testing.html">プレーヤー/プラグインのバージョンテスト</a></li>
                     
-                    <li><a href="/troubleshooting/player-informational-properties.html">プレイヤー情報プロパティ</a></li>
+                    <li><a href="/troubleshooting/player-informational-properties.html">プレーヤー情報プロパティ</a></li>
                     
                     <li><a href="/code-samples/brightcove-player-sample-live-custom-error-message.html">サンプル:ライブカスタムエラーメッセージ</a></li>
                     
-                    <li><a href="/troubleshooting/step-step-brightcove-player-debugger.html">ステップバイステップ:Brightcoveプレーヤーデバッガ</a></li>
+                    <li><a href="/troubleshooting/step-step-brightcove-player-debugger.html">ステップ・バイ・ステップ:Brightcoveプレーヤーデバッガ</a></li>
                     
                     <li><a href="/troubleshooting/running-network-path-trace.html">ネットワークパストレースの実行</a></li>
                     
@@ -377,11 +377,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                  
                     <li><a href="/styling/customizing-player-appearance.html">プレーヤーの外観のカスタマイズ</a></li>
                     
-                    <li><a href="/styling/customizing-player-appearance-legacy-skin.html">プレイヤーの外観のカスタマイズ-レガシースキン</a></li>
+                    <li><a href="/styling/customizing-player-appearance-legacy-skin.html">プレーヤーの外観のカスタマイズ-レガシースキン</a></li>
                     
-                    <li><a href="/styling/brightcove-player-sample-player-styling-playground.html">プレイヤースタイリングプレイグラウンド</a></li>
+                    <li><a href="/styling/brightcove-player-sample-player-styling-playground.html">プレーヤースタイリングプレイグラウンド</a></li>
                     
-                    <li><a href="/styling/quick-start-player-customization-legacy-skin.html">「クイックスタート:プレイヤーのカスタマイズ-レガシースキン</a></li>
+                    <li><a href="/styling/quick-start-player-customization-legacy-skin.html">「クイックスタート:プレーヤーのカスタマイズ-レガシースキン</a></li>
                     
                     <li><a href="/getting-started/step-step-player-customization.html">ステップバイステップ:プレーヤーのカスタマイズ</a></li>
                     
@@ -404,7 +404,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     
                     <li><a href="/troubleshooting/brightcove-playback-technology-app.html">Brightcoveの再生テクノロジーアプリ</a></li>
                     
-                    <li><a href="/playback/china-delivery-with-bcp.html">チャイナデリバリー</a></li>
+                    <li><a href="/playback/china-delivery-with-bcp.html">中国への配信</a></li>
                     
                     <li><a href="/playback/xdr-with-bcplayer.html">クロスデバイスレジューム</a></li>
                     
@@ -412,7 +412,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     
                     <li><a href="/playback/delivering-hls-video.html">HLS ビデオの配信</a></li>
                     
-                    <li><a href="/playback/using-delivery-rules-with-bcp.html">配達規則</a></li>
+                    <li><a href="/playback/using-delivery-rules-with-bcp.html">デリバリー ルール</a></li>
                     
                     <li><a href="/playback/determining-which-rendition-will-play.html">再生するレンディションを決定する</a></li>
                     
@@ -474,7 +474,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     
                     <li><a href="/coding-topics/localizing-plugins.html">プラグインのローカライズ</a></li>
                     
-                    <li><a href="/coding-topics/player-events.html">プレイヤーイベント</a></li>
+                    <li><a href="/coding-topics/player-events.html">プレーヤーイベント</a></li>
                     
                     <li><a href="/coding-topics/overview-components.html">概要:コンポーネント</a></li>
                     
@@ -484,7 +484,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     
                     <li><a href="/coding-topics/pass-data-plugin.html">プラグインにデータを渡す</a></li>
                     
-                    <li><a href="/coding-topics/react-player-loader.html">プレイヤーローダーを反応させる</a></li>
+                    <li><a href="/coding-topics/react-player-loader.html">プレーヤーローダーを反応させる</a></li>
                     
                     <li><a href="/coding-topics/reporting-brightcove-player-configurations.html">Brightcove Player設定に関するレポート</a></li>
                     
@@ -519,7 +519,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     
                     <li><a href="/plugins/display-overlay-plugin.html">オーバーレイプラグインを表示</a></li>
                     
-                    <li><a href="/analytics/ga-self-configure.html">GoogleAnalyticsの自己構成</a></li>
+                    <li><a href="/analytics/ga-self-configure.html">Google Analyticsの自己構成</a></li>
                     
                     <li><a href="/references/guide-playlist-api.html">ガイド:プレイリスト API </a></li>
                     
@@ -571,7 +571,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
               <h5 class="submenu-header"><a href="/amp/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;AMP</a></h5>
               <ul class="sidenav-submenu" style="display:none;">
                  
-                    <li><a href="/amp/amp-using-video-cloud-video.html">AMP ビデオクラウドビデオを使用する</a></li>
+                    <li><a href="/amp/amp-using-video-cloud-video.html">AMP Video Cloudビデオを使用する</a></li>
                     
                     <li><a href="/amp/amp-using-external-video.html">AMP外部ビデオを使用する</a></li>
                     
@@ -637,59 +637,61 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </details>
 <!-- open in new tab/window -->
 <a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a> 
- <h1>「オーバーレイプラグインを表示」</h1>
+ <h1>オーバーレイ表示プラグイン</h1>
 <article class="bcls-article">
-  <summary>このトピックでは、Overlay プラグインの使用方法と、Studio での実装方法と、カスタムコーディングによる実装方法について学習します。オーバーレイプラグインは、単純なメッセージを半透明オーバーレイとしてプレーヤーの上に表示するために使用できます。「</summary>
+  <summary>このトピックでは、Overlay プラグインの使用方法と、Studioおよびカスタム・コーディングによる実装方法について説明します。Overlay プラグインを使用すると、プレーヤーの上に半透明のオーバーレイとして簡単なメッセージを表示できます。</summary>
 
   <style type="text/css">
     iframe { width: 600px; height: 338px; }
   </style>
   <section class="bcls-section">
     <h2 id="Overview">概要</h2>
-    <p>オーバーレイメッセージの表示は、次の項目に基づいて制御できます。</p>
+    <p>オーバーレイ メッセージの表示は、次の項目に基づいて制御できます:</p>
     <ul>
-      <li>プレイヤーイベント ( <code translate="No">play</code><code translate="No">pause</code>カスタムイベントなど)</li>
-      <li>時間間隔-ビデオ再生中の指定された時間</li>
+      <li>プレーヤーイベント -( <code translate="No">play</code>、<code translate="No">pause</code>、カスタムイベントなど)</li>
+      <li>時間間隔 -ビデオ再生中の指定した時間</li>
     </ul>
     <p>
-      以下のサンプルビデオは、オーバーレイプラグインの使用方法を示しています。オーバーレイは、開始時だけでなく、異なる期間 (5 秒から始まる) に表示されます。ビデオを開始および一時停止して、オーバーレイがこれらのイベントに反応するのを確認します。
+      以下のサンプル動画は、オーバーレイ プラグインの使用方法を示しています。オーバーレイは、開始時だけでなく、異なる期間 (5 秒から始まる) に表示されます。ビデオを開始および一時停止して、オーバーレイがこれらのイベントに反応するのを確認します。
     </p>
     <iframe src="https://players.brightcove.net/1752604059001/972ee851-3d7e-43a0-8db1-2c6fb06bad34_default/index.html" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe>
-    <p>このトピックでは、次のセクションについて説明します。</p>
+    <p>このトピックには、以下のセクションがあります:</p>
     <ul>
       <li><a href="#playersmodule">Players モジュールを使用した実装</a></li>
       <li><a href="#implementcode">カスタムコードを使用した実装</a> </li>
-      <li><a href="#options">オーバーレイプラグインのオプション</a> </li>
+      <li><a href="#options">オーバーレイ プラグインのオプション</a> </li>
     </ul>
   </section>
   <section class="bcls-section">
-    <h2 id="playersmodule">プレーヤーモジュールを使用して実装する</h2>
-    <p>Players モジュールを使用してオーバーレイプラグインを実装するには、次の手順に従います。</p>
+    <h2 id="playersmodule"> Players モジュールを使用して実装</h2>
+    <p>Players モジュールを使用してオーバーレイ プラグインを実装するには、次の手順に従います:</p>
     <ol class="bcls-tasklist">
       <li>
-        を開きます<strong>プレイヤー</strong>モジュールを作成し、新しいプレーヤーを作成するか、プラグインを追加するプレーヤーを見つけます。
+        <strong>Players</strong>モジュールを開き、新しいプレーヤーを作成するか、プラグインを追加するプレーヤーを探します。
       </li>
-      <li>プレーヤーのリンクをクリックして、プレイヤーのプロパティを開きます。</li>
-      <li>左側のナビゲーションで、[ <strong>プラグイン] をクリックします</strong>。</li>
+      <li>プレーヤーのリンクをクリックして、プレーヤーのプロパティを開きます。</li>
+      <li>左側のナビゲーションで、[<strong>プラグイン</strong>] をクリックします。</li>
       <li>
-        [ <strong>プラグインの追加]</strong>ドロップダウンメニューを展開し、[ <strong>カスタムプラグイン] を選択します</strong>。
+        [ <strong>プラグインの追加</strong>]ドロップダウンメニューを展開し、[ <strong>カスタムプラグイン</strong>] を選択します。
         <figure class="bcls-figure">
           <img class="bcls-image" alt="Custom Plugin" src="/assets/images/plugins/overlay/select-custom-plugin.png" />
         </figure>
       </li>
-      <li>[ <strong>プラグイン名</strong> ] に、と入力します<code translate="No">overlay</code>。</li>
+      <li>[ <strong>プラグイン名</strong> ] に、<code translate="No">overlay</code> と入力します。</li>
       <li>
-        <strong> JavaScript の</strong>  URL には、次のように入力します。
+        <strong> JavaScript </strong> の URL には、次のように入力します。
         <pre>
 <code class="language-json" translate="No">https://players.brightcove.net/videojs-overlay/2/videojs-overlay.min.js</code></pre>
+<aside class="bcls-aside bcls-aside--information language-editable">注: プラグインのバージョン 3 は Brightcove Player 7.x 用です。6.x プレーヤーをまだ使用している場合は、プラグインのバージョン 2 を使用する必要があります。そのためには、上記の URL の  <code translate="No">/3/</code> を <code translate="No">/2/</code> に置き換えて下さい。</aside>
       </li>
       <li>
-        <strong>CSS の</strong> URL には、次のように入力します。
+        <strong>CSS</strong> の URL には、次のように入力します。
         <pre>
 <code class="language-json" translate="No">https://players.brightcove.net/videojs-overlay/2/videojs-overlay.css</code></pre>
+<aside class="bcls-aside bcls-aside--information language-editable">注: プラグインのバージョン 3 は Brightcove Player 7.x 用です。6.x プレーヤーをまだ使用している場合は、プラグインのバージョン 2 を使用する必要があります。そのためには、上記の URL の  <code translate="No">/3/</code> を <code translate="No">/2/</code> に置き換えて下さい。</aside>
       </li>
       <li>
-        [ <strong>オプション (JSON)] </strong>テキストボックスに構成オプションを入力します。以下の例では、2秒マークから始まり、6秒のマークで終わるプレーヤーの下部にアンカーが表示されます。
+        設定オプションを[ <strong>オプション (JSON)</strong>] テキスト ボックスに入力します。以下の例では、プレーヤーの下部に、2 秒のマークから始まり 6 秒のマークで終わるアンカーを表示します。
         <pre class="line-numbers">
 <code class="language-json" translate="No">{
   "overlays": [
@@ -708,29 +710,30 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <img class="bcls-image" alt="Overlay Plugin" src="/assets/images/plugins/overlay/overlay-plugin.png" />
         </figure>
       </li>
-      <li>[ <strong>保存] をクリックします</strong>。</li>
-      <li>プレーヤーを公開するには、[ <strong>パブリッシュと埋め込み] &gt; [変更の公開] の順にクリックします</strong>。</li>
-      <li>開くダイアログを閉じるには、[ <strong>閉じる] をクリックします</strong>。</li>
+      <li>[<strong>保存</strong>] をクリックします。</li>
+      <li>プレーヤーを公開するには、<strong>[公開と埋め込み] &gt; [変更の公開] </strong>の順にクリックします。</li>
+      <li>開いているダイアログを閉じるには、[<strong>閉じる</strong>] をクリックします。</li>
     </ol>
   </section>
   <section class="bcls-section">
     <h2 id="implementcode">コードを使用して実装する</h2>
-    <p>カスタムコードを使用してプラグインを実装するには、次のプラグインプロパティを設定します。</p>
+    <p>カスタムコードを使用してプラグインを実装するには、次のプラグイン プロパティを設定します:</p>
     <ul>
-      <li><code translate="No">scripts</code> - JavaScript supplied for the plugin and will not change for different plugin implementations</li>
-      <li><code translate="No">stylesheets</code>   -CSSはプラグインのために提供され、異なるプラグインの実装では変更されません</li>
-      <li><code translate="No">plugin name</code>   -いつも<code translate="No">overlay</code>   </li>
-      <li><code translate="No">plugin options</code> - Contains an array of properties and values</li>
+      <li><code translate="No">scripts</code> - プラグイン用に提供されるJavaScriptで、プラグインの実装が異なっても変更されることはありません。</li>
+      <li><code translate="No">stylesheets</code>   -プラグイン用に提供されるCSSで、プラグインの実装が異なっても変更されません。</li>
+      <li><code translate="No">plugin name</code>   -常に<code translate="No">overlay</code> になります。</li>
+      <li><code translate="No">plugin options</code> - プロパティと値の配列を含みます。</li>
     </ul>
-    <p>プラグインをコードに追加するには、次の手順に従います。</p>
+    <p>プラグインをコードに追加するには、次の手順に従います:</p>
     <ol class="bcls-tasklist">
       <li>
-        オーバーレイプラグインのデフォルトスタイルシートを追加します。既定のスタイルシートを使用することも、独自のスタイルを作成することもできます。
+        オーバーレイ プラグインのデフォルト スタイルシートを追加します。デフォルトのスタイルシートを使用するか、独自のスタイルを作成することができます。
         <pre class="line-numbers">
 <code class="language-html" translate="No">&lt;link href="https://players.brightcove.net/videojs-overlay/2/videojs-overlay.css" rel='stylesheet'&gt;</code></pre>
+<aside class="bcls-aside bcls-aside--information language-editable">注: プラグインのバージョン 3 は Brightcove Player 7.x 用です。6.x プレーヤーをまだ使用している場合は、プラグインのバージョン 2 を使用する必要があります。そのためには、上記の URL の  <code translate="No">/3/</code> を <code translate="No">/2/</code> に置き換えて下さい。</aside>
       </li>
       <li>
-        オーバーレイプラグインを含めるには、<code translate="No">videojs-overlay.js</code>スクリプトファイルを追加します。このプラグインは、ページに含まれると自動的に登録されます。<aside class="bcls-aside bcls-aside--tip"> Note:このプラグインスクリプトは、<code translate="No">&lt;script&gt;</code>プレーヤーの埋め込みコードの最後のタグの後に配置する必要があります。</aside>
+        <code translate="No">videojs-overlay.js</code>スクリプトファイルを追加して、オーバーレイ プラグインを含めます。このプラグインは、ページに含まれると自動的に登録されます。<aside class="bcls-aside bcls-aside--tip"> 注:このプラグイン スクリプトは、プレーヤーの埋め込みコードの最後の <code translate="No">&lt;script&gt;</code> タグの後に配置する必要があります。</aside>
         <pre class="line-numbers">
 <code class="language-html" translate="No">&lt;video-js id="myPlayerID"
     data-account="1752604059001"
@@ -742,9 +745,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 &lt;script src="https://players.brightcove.net/1752604059001/a5bb5681-9bfb-4203-9dac-eb3b98c8b4b2_default/index.min.js"&gt;&lt;/script&gt;
 
 <span class="bcls-highlight">&lt;script src="https://players.brightcove.net/videojs-overlay/2/videojs-overlay.min.js"&gt;&lt;/script&gt;</span></code></pre>
+<aside class="bcls-aside bcls-aside--information language-editable">注: プラグインのバージョン 3 は Brightcove Player 7.x 用です。6.x プレーヤーをまだ使用している場合は、プラグインのバージョン 2 を使用する必要があります。そのためには、上記の URL の  <code translate="No">/3/</code> を <code translate="No">/2/</code> に置き換えて下さい。</aside>
       </li>
       <li>
-        Brightcove Playerへの参照を取得します。この例では、<code translate="No">myPlayer</code>という名前の変数を作成し、その変数にプレイヤーへの参照を割り当てています。
+        Brightcove Playerへの参照を取得します。この例では、<code translate="No">myPlayer</code>という名前の変数を作成し、プレーヤーへの参照を代入しています。
         <pre class="line-numbers">
 <code class="language-html" translate="No">&lt;script&gt;
   videojs.getPlayer('myPlayerID').ready(function() {
@@ -752,14 +756,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   });
 &lt;/script&gt;</code></pre>
         <p>
-          オーバーレイメッセージを表示するには、<code translate="No">options</code>プロパティを使用してデータをプラグインに渡します。次に、3 つのオーバーレイメッセージを含める例を示します。
+          オーバーレイ メッセージを表示するには、<code translate="No">options</code> プロパティを使用してデータをプラグインに渡します。次に、3 つのオーバーレイ メッセージを含める例を示します。
         </p>
         <ul>
           <li>
             最初のオーバーレイ:
             <ul>
               <li>
-                これは、<code translate="No">play</code>イベントが送出されたときに表示され、<code translate="No">pause</code>イベントが送出されると非表示になります。
+                これは、<code translate="No">play</code> イベントが送出されたときに表示され、<code translate="No">pause</code> イベントが送出されると非表示になります。
               </li>
             </ul>
           </li>
@@ -767,26 +771,26 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             2 番目のオーバーレイ:
             <ul>
               <li>
-                これは、ビデオの再生が 5 秒経過したときに表示され、ビデオ再生が 10 秒経過すると非表示になります。
+                ビデオの再生が 5 秒経過したときに表示され、ビデオ再生が 10 秒経過すると非表示になります。
               </li>
-              <li>これは、プレイヤーの右下隅に配置されます。</li>
+              <li>プレーヤーの右下隅に表示されます。</li>
             </ul>
           </li>
           <li>
-            第 3 オーバーレイ:
+            3 番目のオーバーレイ:
             <ul>
               <li>
-                これは、ビデオの再生が 12 秒経過したときに表示され、ビデオ再生が 17 秒経過すると非表示になります。
+                ビデオの再生が 12 秒経過したときに表示され、ビデオ再生が 17 秒経過すると非表示になります。
               </li>
-              <li>これは、プレーヤーの左下隅に配置されます。</li>
+              <li>プレーヤーの左下隅に表示されます。</li>
               <li>
-                <code translate="No">content</code>このオーバーレイにはオプションが定義されていないため、<strong>デフォルトのオーバーレイコンテンツのデフォルト値が使用されます。これは</strong>、<code translate="No">overlays</code>配列。
+                このオーバーレイには、<code translate="No">content</code> オプションが定義されていないため、<code translate="No">overlays</code> 配列の前に定義された <strong>デフォルトのオーバーレイ コンテンツ</strong> のデフォルト値が使用されます。
               </li>
             </ul>
           </li>
         </ul>
         &nbsp;
-        <p>コードにオーバーレイスクリプトを含めると、メッセージを次のように定義できます。</p>
+        <p>オーバーレイ スクリプトをコードに含めると、メッセージを次のように定義できます:</p>
         <pre class="line-numbers">
 <code class="language-html" translate="No">&lt;script id="pageScript" type="text/javascript"&gt;
   videojs.getPlayer('myPlayerID').ready(function() {
@@ -816,14 +820,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="options">オプション</h2>
-    <p>オーバーレイオブジェクトを制御するには、次のプラグインオプションを使用します。</p>
+    <p>以下のプラグイン オプションは、オーバーレイ オブジェクトを制御するために使用されます：</p>
     <ul>
       <li>
         <code translate="No">align</code>   :
         <ul>
           <li>値は、サポートされている文字列値である必要があります。</li>
           <li>
-            これは、オーバーレイを表示する場所を定義します。既定のスタイルシートを含めると、次の値がサポートされます: <code translate="No">top-left</code>、<code translate="No">top</code>、<code translate="No">top-right</code>、<code translate="No">right</code><code translate="No">bottom-right</code>、<code translate="No">bottom</code>、<code translate="No">bottom-left</code>   , <code translate="No">left</code>   .
+            これは、オーバーレイを表示する場所を定義します。デフォルトのスタイルシートを含めると、次の値がサポートされます: <code translate="No">top-left</code>、<code translate="No">top</code>、<code translate="No">top-right</code>、<code translate="No">right</code>、<code translate="No">bottom-right</code>、<code translate="No">bottom</code>、<code translate="No">bottom-left</code>、<code translate="No">left</code> .
           </li>
         </ul>
       </li>
@@ -831,15 +835,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <code translate="No">attachToControlBar</code>   :
         <ul>
           <li>
-            値には、文字列またはブール値を指定できます。値が文字列の場合は、ControlBar コンポーネントの名前を指定する必要があります。
+            値には、文字列またはブール値を指定します。値が文字列の場合は、ControlBar コンポーネントの名前を指定する必要があります。
           </li>
           <li>
             <p>
-              <code translate="No">true</code>または文字列値に設定した場合、コントロールバーが最小化されたときに、下揃えオーバーレイの位置が調整されます。これは、下、左下、右下に位置合わせされていないオーバーレイには影響しません。このオプションは既定のコントロールバーで使用され、カスタムコントロールバーでは機能しない場合があります。下揃えオーバーレイは、指定されたコンポーネントの前に挿入されます。それ以外の場合は、ControlBar の最初の子コンポーネントの前に下揃えオーバーレイが挿入されます。他のすべてのオーバーレイは、ControlBar コンポーネントの前に挿入されます。
+              <code translate="No">true</code>または文字列値に設定した場合、コントロールバーが最小化されたときに、下揃えオーバーレイの位置が調整されます。これは、下、左下、右下に整列されていないオーバーレイには影響しません。このオプションはデフォルトのコントロールバーで使用されるためのもので、カスタム コントロールバーでは機能しない場合があります。ボトムに整列されたオーバーレイは、指定されたコンポーネントの前に挿入されます。それ以外の場合は、ControlBar の最初の子コンポーネントの前に下揃えオーバーレイが挿入されます。他のすべてのオーバーレイは、ControlBar コンポーネントの前に挿入されます。
             </p>
           </li>
           <li>
-            このオプションは、最上位レベルで使用して、すべての適格な線形に対して設定できます。
+            このオプションは、トップレベルで使用することで、対象となるすべてのアラインメントに設定することができます。
             <pre class="line-numbers">
 <code class="language-javascript" translate="No">myPlayer.overlay({
   content: '<strong>Default overlay content</strong>',
@@ -860,7 +864,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     align: 'bottom-left'
   }]
 });</code></pre>
-            <p>または、個々のオーバーレイオブジェクトの場合:</p>
+            <p>または、個々のオーバーレイ オブジェクトに対して:</p>
             <pre class="line-numbers">
 <code class="language-javascript" translate="No">myPlayer.overlay({
   content: '<strong>Default overlay content</strong>',
@@ -881,7 +885,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <span class="bcls-highlight">attachToControlBar : true</span>
   }]
 });</code></pre>
-            <p><em>トップレベルの設定は、個々のオーバーレイオブジェクトに対するオプションの使用によって上書きできます。</em></p>
+            <p><em>トップレベルの設定は、個々のオーバーレイ オブジェクトのオプションの使用によって上書きできます。</em></p>
           </li>
           <li>
             視覚的な影響は、次のスクリーンショットで確認できます。
@@ -894,12 +898,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </figure>
             <figure class="bcls-figure">
               <img class="bcls-image" alt="attachToControlBar not used" src="/assets/images/plugins/overlay/attachToControlBar-see-controlbar.png" />
-              <figcaption class="bcls-caption--image"><code translate="No">attachToControlBar</code> used with controlbar displayed</figcaption>
+              <figcaption class="bcls-caption--image"><code translate="No">attachToControlBar</code> コントロールバーが表示されている状態で使用</figcaption>
             </figure>
             <figure class="bcls-figure">
               <img class="bcls-image" alt="attachToControlBar not used" src="/assets/images/plugins/overlay/attachToControlBar-no-controlbar.png" />
               <figcaption class="bcls-caption--image">
-                <code translate="No">attachToControlBar</code>使用済みとコントロールバー非表示<br />
+                <code translate="No">attachToControlBar</code>が使用され、コントロールバー非表示<br />
                 (オーバーレイはコントロールバーの可視性とともに移動します)
               </figcaption>
             </figure>
@@ -910,7 +914,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <code translate="No">class</code>:
         <ul>
           <li>
-            オーバーレイ要素に追加するカスタム HTML クラス。任意のクラスセレクターと同様にスタイルを定義します。ただし、<code translate="No">.video-js</code>選択したセレクターと一緒にセレクターを使用する必要があります (スタイルがオーバーライドされないように詳細度を大きくする必要があります)。
+            オーバーレイ要素に追加するカスタム HTML クラス。スタイルは、選択したセレクターと一緒に、<code translate="No">.video-js</code> セレクターをを使用する必要がある点を除いて、他のクラス セレクターと同じように定義します (スタイルがオーバーライドされないように詳細度を高める必要があります)。
             <pre class="line-numbers">
 <code class="language-css" translate="No">.video-js .customOverlay {
   color: yellow;
@@ -918,7 +922,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 }</code></pre>
           </li>
           <li>
-            このオプションは、トップレベルで使用することで、すべての適格な線形に対して設定できます。
+            このオプションは、トップレベルで使用することで、対象となるすべてのアラインメントに設定することができます：
             <pre class="line-numbers">
 <code class="language-javascript" translate="No">myPlayer.overlay({
   content: '<strong>Default overlay content</strong>',
@@ -935,7 +939,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     align: 'bottom-right'
   }]
 });</code></pre>
-            <p>または、個々のオーバーレイオブジェクトの場合:</p>
+            <p>または、個々のオーバーレイ オブジェクトに対して:</p>
             <pre class="line-numbers">
 <code class="language-javascript" translate="No">myPlayer.overlay({
   content: '<strong>Default overlay content</strong>',
@@ -953,36 +957,36 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     align: 'bottom-right'
   }]
 });</code></pre>
-            <p><em>トップレベルの設定は、個々のオーバーレイオブジェクトに対するオプションの使用によってオーバーライドできます。 </em></p>
+            <p><em>トップレベルの設定は、個々のオーバーレイ オブジェクトに対するオプションの使用によって上書きすることができます。 </em></p>
           </li>
         </ul>
       </li>
       <li>
-        <code translate="No">content</code>:
+        <code translate="No">content</code> :
         <ul>
           <li>値には、文字列または DOM オブジェクトを指定できます。</li>
           <li>
-            これは、オーバーレイに含まれるHTMLです。文字列、HTML 要素、または<a href="//www.w3.org/TR/REC-DOM-Level-1/level-one-core.html#ID-B63ED1A3">  DOM DocumentFragment を渡すことができます</a>。
+            これは、オーバーレイに含まれる HTML です。文字列、HTML要素、または<a href="//www.w3.org/TR/REC-DOM-Level-1/level-one-core.html#ID-B63ED1A3">  DOM DocumentFragment</a> を渡すことができます。
           </li>
-          <li><code translate="No">This overlay will show up while the video is playing</code>デフォルト値は文字列です。</li>
-          <li>このオプションは、最上位レベルまたは個々のオーバーレイオブジェクトに設定できます。</li>
+          <li>デフォルト値は文字列 <code translate="No">This overlay will show up while the video is playing</code>。</li>
+          <li>このオプションは、トップレベルまたは個々のオーバーレイ オブジェクトに対して設定することもできます。</li>
         </ul>
       </li>
       <li>
-        <code translate="No">end</code>   :
+        <code translate="No">end</code> :
         <ul>
-          <li>値には、文字列または数値を指定できます。</li>
+          <li>値は、文字列または数値を指定できます。</li>
           <li>
-            これは、オーバーレイを非表示にするタイミングを定義します。値が文字列の場合は、イベント名として解釈されます。数字の場合、ビデオ再生の時間（秒単位）が経過すると、オーバーレイは非表示になります。値が文字列の場合、&nbsp; Brightcove Player イベント名 ( <code translate="No">play</code><code translate="No">pause</code>など) として解釈されます。<code translate="No">ended</code>。すべてのプレイヤーイベントのリストは、<a href="https://docs.brightcove.com/brightcove-player/current-release/Player.html#toc125__anchor">  Player API にあります</a>。
+            オーバーレイを非表示にするタイミングを定義します。値が文字列の場合は、イベント名として解釈されます。数字の場合、動画再生でその時間（秒単位）が経過すると、オーバーレイは非表示になります。値が文字列の場合、<code translate="No">play</code>、<code translate="No">pause</code>、<code translate="No">ended</code> などの Brightcove Player イベント名として解釈されます。すべてのプレーヤー イベントのリストは、<a href="https://docs.brightcove.com/brightcove-player/current-release/Player.html#toc125__anchor">  Player API </a>にあります。
           </li>
         </ul>
       </li>
       <li>
         <code translate="No">overlays</code>   :
         <ul>
-          <li>オーバーレイオブジェクトの配列。</li>
+          <li>オーバーレイ オブジェクトの配列。</li>
           <li>
-            オーバーレイオブジェクトは、<code translate="No">start</code><code translate="No">end</code>少なくともとオプションで構成する必要があります。必要に応じて、他のオプションを使用します。
+            オーバーレイ オブジェクトは、少なくとも <code translate="No">start</code> と <code translate="No">end</code> のオプションで構成する必要があります。他のオプションは必要に応じて使用します。
           </li>
         </ul>
       </li>
@@ -991,30 +995,30 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <ul>
           <li>値はブール値です。</li>
           <li>
-            オーバーレイの周囲に背景のスタイルとパディングを含めるかどうかを決定します。 <em>この設定は、個々のオーバーレイオブジェクトに設定することで上書きできます。 </em>
+            オーバーレイの周囲に背景のスタイルとパディングを含めるかどうかを決定します。 <em>この設定は、個々のオーバーレイ オブジェクトに設定することで上書きできます。 </em>
           </li>
         </ul>
       </li>
       <li>
         <code translate="No">start</code>:
         <ul>
-          <li>値には、文字列または数値を指定できます。オーバーレイを表示するタイミングを定義します。 </li>
+          <li>値には、文字列または数値を指定できます。これは、オーバーレイを表示するタイミングを定義します。 </li>
           <li>
-            数字の場合は、ビデオ再生の時間（秒単位）が経過したときにオーバーレイが表示されます。
+            数字の場合は、動画再生でその時間（秒単位）が経過したときにオーバーレイが表示されます。
           </li>
           <li>
-            値が文字列の場合、次のように解釈されます。&nbsp; BrightcovePlayerのイベント名。<code translate="No">play</code>、<code translate="No">pause</code>または<code translate="No">ended</code>。ここに役立つリンクがあります：
+            値が文字列の場合、<code translate="No">play</code>、<code translate="No">pause</code>、<code translate="No">ended</code> などの Brightcove Playerのイベント名として解釈されます。いかに役立つリンクを示します：
             <ul>
               <li>
-                <a href="/coding-topics/player-events.html">プレイヤーイベント</a> 
+                <a href="/coding-topics/player-events.html">プレーヤー イベント</a> 
               </li>
               <li>
-                <a href="https://docs.brightcove.com/brightcove-player/current-release/Player.html#toc125__anchor">プレーヤー API リファレンス</a> 
+                <a href="https://docs.brightcove.com/brightcove-player/current-release/Player.html#toc125__anchor">Player API リファレンス</a> 
               </li>
             </ul>
           </li>
           <li>
-            ビデオの再生が始まる前にオーバーレイテキストを表示する例を次に示します。
+            ビデオの再生が始まる前にオーバーレイ テキストを表示する例を次に示します:
             <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.getPlayer('myPlayerID').ready(function() {
   var myPlayer = this;
@@ -1033,18 +1037,18 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
     </ul>
     <p>
-      プレーヤーからディスパッチされたイベントを使用できます。これらのイベントは、<a href="https://docs.brightcove.com/brightcove-player/current-release/Player.html">プレーヤーメソッド/イベントAPI</a>ドキュメント、または独自のカスタムイベントを使用できます。
+      <a href="https://docs.brightcove.com/brightcove-player/current-release/Player.html">プレーヤー メソッド/イベント API</a>ドキュメントで定義されている、プレーヤーからディスパッチされる任意のイベントを使用ことも、独自のカスタムイベントを使用することもできます。
     </p>
     <p>
-      これらのプロパティはすべてオプションですが、少なくとも以下を含めないと、奇妙な結果が得られる可能性があります。<code translate="No">start</code>そして<code translate="No">end</code>プロパティ。
+      これらのプロパティはすべてオプションですが、少なくとも <code translate="No">start</code> と <code translate="No">end</code> プロパティを含めないと、おかしな結果になるかもしれません。
     </p>
-    <aside class="bcls-aside bcls-aside--tip">にVODコンテンツのみを使用する場合<code>始める</code>イベント、あなたが使用することができます<code>ロードされたメタデータ</code>それ以外の<code>loadstart</code>。コンテンツをストリーミングする場合は<code> loadstart を使用する必要があります</code>。</aside>
+    <aside class="bcls-aside bcls-aside--tip"><code>start</code> イベントにVODコンテンツのみを使用する場合、<code>loadstart</code> の代わりに <code>loademetadata</code> を使用することができます。コンテンツをストリーミングする場合は、<code> loadstart </code>を使用する必要があります。</aside>
   </section>
   <section class="bcls-section">
     <h2 id="Styling_the_overlay">オーバーレイのスタイリング</h2>
-    <p>オーバーレイを操作するときは、2 つのスタイルが役立ちます。彼らはここに詳しい。</p>
+    <p>オーバーレイを使用する際、2 つのスタイルが役立ちます。詳しくは以下になります。</p>
     <h3>背景を隠す</h3>
-    <p>次の CSS は背景を非表示にします。</p>
+    <p>次の CSS は背景を非表示にします:</p>
     <pre class="line-numbers">
 <code class="language-css" translate="No">.vjs-overlay.vjs-overlay-top.vjs-overlay-background {
   width: 100 % ;
@@ -1054,46 +1058,46 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 }
 </code></pre>
     <h3>オーバーレイを非表示にする</h3>
-    <p>次のCSSは背景を隠すでしょう：</p>
+    <p>次のCSSはオーバーレイを隠します：</p>
     <pre class="line-numbers">
 <code class="language-css" translate="No">.hide-overlay.vjs-overlay {
   display: none;
 }</code></pre>
     <p>
-      <a href="/code-samples/brightcove-player-sample-toggling-overlay.html"> Brightcove Player のサンプルでは、これらのスタイルの両方が役立ちます。</a>オーバーレイドキュメントの切り替え
+      これらのスタイルはどちらも<a href="/code-samples/brightcove-player-sample-toggling-overlay.html"> Brightcove Player サンプル: オーバーレイの切り替え</a>ドキュメントで役立ちます。
     </p>
   </section>
   <section class="bcls-section video-cloud-only">
-    <h2 id="displaymetadata">ビデオメタデータの表示</h2>
+    <h2 id="displaymetadata">ビデオのメタデータの表示</h2>
     <p>
-      オーバーレイにビデオに関する情報を表示したい場合があります。たとえば、次のように、動画の再生を開始する前に、動画のカスタムフィールドの1つからメッセージを表示します。<strong>スクリーンショット</strong>未満。
+      オーバーレイにビデオに関する情報を表示したい場合があります。たとえば、次の<strong>スクリーンショット</strong>のように、動画の再生を開始する前に、動画のカスタムフィールドの1つからメッセージを表示します。
     </p>
     <figure class="bcls-figure">
       <img class="bcls-image" alt="overlay with video name" src="/assets/images/plugins/overlay/overlay-showing-video-name.png" />
     </figure>
     <p>
-      次のセクションでは、その特定のタスクを実行する方法について説明しますが、さらに、<a href="/references/video-metadata-mediainfo.html"> mediainfo</a>オブジェクトの場合、選択したときにいつでもビデオメタデータを表示できます。
+      次のセクションでは、その特定のタスクを実行する方法について説明しますが、さらに<a href="/references/video-metadata-mediainfo.html"> mediainfo</a>オブジェクトのデータを取得すると、いつでもビデオメタデータを表示することができます。
     </p>
     <ul>
-      <li>112号線:オーバーレイプラグインの CSS を含めます。</li>
+      <li>112行目:オーバーレイ プラグイン用の CSS を含めます。</li>
       <li>
-        113-124行目:CSS を使用して以下を実行します。
+        113-124行目:CSS を使用して以下を実行します:
         <ul>
-          <li>プレーヤーのサイズを変更する</li>
+          <li>プレーヤーのサイズの変更する</li>
           <li>メッセージのフォントサイズと色を設定する</li>
           <li>オーバーレイの幅を設定する</li>
           <li>オーバーレイの背景色を変更する</li>
         </ul>
       </li>
-      <li>128～135行目:標準のページ内埋め込みコードが使用されます。<code translate="No">id</code>が追加されていることに注意してください。</li>
-      <li>136号線:オーバーレイプラグインの JavaScript コードのソースを指定します。</li>
-      <li>139,140,152号線:プレーヤーでコードを使用するための標準設定。</li>
+      <li>128～135行目:標準的なページ内埋め込みコードが使用されます。<code translate="No">id</code>が追加されていることに注意してください。</li>
+      <li>136行目:オーバーレイ プラグインの JavaScript コードのソースを指定します。</li>
+      <li>139,140,152行目:プレーヤーでコードを使用するための標準設定。</li>
       <li>
-        141,151号線:<code translate="No">on()</code>メソッドを使用して、イベントのイベントリスナーを追加します。<code translate="No">loadstart</code>   匿名イベントハンドラ関数では、それをミュートし、<code translate="No">mediainfo</code>オブジェクトからの情報を使用するように、プレーヤー内のビデオに対して行動することができます。
+        141,151行目:<code translate="No">on()</code>メソッドを使用して、<code translate="No">loadstart</code>イベントのイベントリスナーを追加します。匿名イベントハンドラ関数では、プレーヤーの動画に対してミュートなどの処理を行ったり、<code translate="No">mediainfo</code>オブジェクトの情報を使用したりできます。
       </li>
       <li>143,150行目線:<code translate="No">overlay()</code>メソッドを呼び出します。</li>
       <li>
-        144-149行目:を使用して単一のオーバーレイを定義します<code translate="No">content</code> JavaScript変数を使用して、カスタムフィールドに保存されたメッセージを表示します<code translate="No">myPlayer.mediainfo.customfield1</code>。ビデオがロードされると、オーバーレイが表示されます（<code translate="No">start: 'loadstart'</code>）そしてビデオが始まると消えます（<code translate="No">end: 'play'</code>）。
+        144-149行目:JavaScript変数 <code translate="No">myPlayer.mediainfo.customfield1</code> を使用して、カスタムフィールドに保存されたメッセージを表示する <code translate="No">content</code> を使用する、1つのオーバーレイを定義します。オーバーレイは動画がロードされると表示され（<code translate="No">start: 'loadstart'</code>）そして動画が始まると消えます（<code translate="No">end: 'play'</code>）。
       </li>
     </ul>
     <pre class="line-numbers" data-start="106">
@@ -1180,7 +1184,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
         <img src="https://support.brightcove.com/site-assets/images/site/SVG/COVE004_Brightcove_Logo_093020_RGB_KO.svg" class="bc-footer-logo" alt="Brightcove">
 
-        <h2>ブライトコーブのサポート</h2>
+        <h2>Brightcoveのサポート</h2>
 
         <ul class="menu">
           <li>
@@ -1207,14 +1211,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <a href="https://studio.support.brightcove.com/training/register-training.html">コースに登録する</a>
           </li>
           <li>
-            <a href="https://university.brightcove.com/">ブライトコーブ大学</a>
+            <a href="https://university.brightcove.com/">Brightcove University</a>
           </li>
         </ul>
 
       </nav>
       <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
 
-        <h2>ブライトコーブ</h2>
+        <h2>Brightcove</h2>
 
         <ul class="menu">
           <li>
@@ -1233,7 +1237,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <table>
           <tr>
             <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> ブライトコーブ株式会社すべての権利を保有しています。</div>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove株式会社すべての権利を保有しています。</div>
             </td>
             <td><a href="https://www.brightcove.com/en/legal/privacy">プライバシー</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">利用規約</a></td>
             <td>
