@@ -1103,18 +1103,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           <strong>作成</strong> ボタンをクリックします。
         </li>
         <li>利用規約に同意します。</li>
-        <li><em>Google タグ マネージャーのインストール</em> ダイアログが表示されます。ここからスニペットをコピーし、指定された場所に配置する必要があります。
-          <figure class="bcls-figure">
-            <img class="bcls-image--no-border" alt="New account information" src="/assets/images/plugins/google-tag-manager/snippets.png" />
-            <figcaption class="bcls-caption--image">Snippets</figcaption>
-          </figure>
-        </li>
-        <li>スニペットに戻る必要がある場合は、GTMダッシュボードのコンテナIDをクリックします。
-          <figure class="bcls-figure">
-            <img class="bcls-image--no-border" alt="New account information" src="/assets/images/plugins/google-tag-manager/click-id-for-snippets.png" />
-            <figcaption class="bcls-caption--image">Container ID to see snippets again</figcaption>
-          </figure>
-        </li>
       </ol>
     </section>
 
@@ -1123,6 +1111,23 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="Creating_variables_tags_&_triggers">変数、タグ、トリガーの作成</h2>
     <p>トラッキングしたいBrightcoveのイベントは、全てGoogle タグマネージャ（GTM）でイベント タグとして作成する必要があります。GTM からのイベント ID は、Players モジュール内で使用されます。これにより、Brightcoveのイベントデータを GTM イベントに渡すことができます。</p>
     <p>各イベント タグごとに、Google アナリティクスにイベントを送信するための GTM トリガーを作成する必要があります。次に、GTM <strong>変数</strong> タブで、各イベントに関連付けられたカスタム パラメータを作成します。</p>
+    
+    
+    <h3>前提条件</h3>
+    <p>まず、Google アナリティクス: GA4 Event タイプのタグを追加するには、Google タグ タイプのタグを 1 つ追加する必要があります。これを行うには、次の手順に従います: </p>
+    <ol class="bcls-tasklist-restart">
+      <li>タグの種類で <strong>Google タグ</strong>を追加します。
+      <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/plugins/google-tag-manager/google-tag.webp" alt="google-tag">
+        <figcaption class="bcls-caption--image">google-tag</figcaption>
+      </figure>
+      <strong>このコンテナで Google タグが見つかりました</strong> と表示されることに注目して下さい。この手順を忘れると、否定的なメッセージが表示されます。
+      <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/plugins/google-tag-manager/GA-tag-container.webp" alt="google-tag-success">
+        <figcaption class="bcls-caption--image">google-tag-success</figcaption>
+      </figure>
+  </ol>
+</li>
     <h3>GTMにトリガーの追加</h3>
     <p>トラッキングしたいイベントが決まったら、Googleタグ マネージャーでトリガーを作成します。</p>
     <p>
@@ -1275,14 +1280,24 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </figure>
       </li>
       <li>
-        <p>
-          <strong>タグ タイプ</strong> を <strong>Google アナリティクス: GA4設定</strong>を設定します。
-        </p>
+        <p><strong>Google アナリティクス</strong> を選択します。</p>
         <figure class="bcls-figure">
-          <img class="bcls-image--no-border" alt="Tag configuration" src="/assets/images/plugins/google-tag-manager/tag-type.png" />
+          <img class="bcls-image--no-border" alt="" src="/assets/images/plugins/google-tag-manager/GA-GA.webp" />
           <figcaption class="bcls-caption--image">Tag configuration</figcaption>
         </figure>
       </li>
+      <li>
+        <p>
+          <strong>タグ タイプ</strong> で <strong>Google アナリティクス: GA4 イベント</strong> を選択します。
+        </p>
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="Tag configuration" src="/assets/images/plugins/google-tag-manager/GA-event.webp" />
+          <figcaption class="bcls-caption--image">Tag configuration</figcaption>
+        </figure>
+      </li>
+
+
+
       <li>
         <p>
          タグの詳細を入力します:
@@ -1292,25 +1307,26 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <strong>測定 ID</strong> - "G-" ID を入力するか、変数を選択します。
           </li>
           <li>
-            <code translate="no">pageview</code> を自動的に送信したい場合は、<strong>Send a page view event when this configuration loads</strong> オプションをチェックしたままにしてください。
+            <strong>イベント名</strong> - イベント名を指定します。
           </li>
-
+          <li>
+            ユーザーが Web サイトに提供するデータについてさらに詳しい洞察を得る場合は、<strong>ユーザー提供データ</strong> オプションをオンのままにしてください。
+          </li>
         </ul>
         <p>オプション設定:</p>
         <ul>
-          <li><strong>サーバーサイド タギング</strong> - すべてのGA4イベントをGoogleアナリティクスではなく、タグマネージャー サーバーコンテナに送信するには、<strong>サーバーコンテナに送信</strong>を選択します。</li>
           <li><strong>パラメーター</strong> - 設定するパラメータを<strong>設定するフィールド</strong>に追加します。</li>
           <li><strong>カスタム プロパティ</strong> - <strong>ユーザ プロパティ</strong>で設定するカスタム ユーザプロパティを追加します。</li>
         </ul>
         <p>以下は、その例になります:</p>
         <figure class="bcls-figure">
-          <img class="bcls-image--no-border" alt="Tag configuration" src="/assets/images/plugins/google-tag-manager/tag-configuration.png" />
+          <img class="bcls-image--no-border" alt="Tag configuration" src="/assets/images/plugins/google-tag-manager/GA-tag-configuration.webp" />
           <figcaption class="bcls-caption--image">Tag configuration</figcaption>
         </figure>
       </li>
       <li>次に<strong>トリガー</strong>ボックスをクリックします。 
         <figure class="bcls-figure">
-          <img class="bcls-image--no-border" alt="Triggering Modal" src="/assets/images/plugins/google-tag-manager/triggering.png" />
+          <img class="bcls-image--no-border" alt="Triggering Modal" src="/assets/images/plugins/google-tag-manager/GA-triggering.webp" />
           <figcaption class="bcls-caption--image">Triggering</figcaption>
         </figure>
       </li>
