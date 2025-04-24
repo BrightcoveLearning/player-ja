@@ -639,16 +639,16 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a> 
 <article class="bcls-article">
   <h1>概要:プレーヤー API </h1>
-  <summary>The Brightcove Player API allows you to interact with the video through JavaScript, whether the browser is playing the video through HTML5 video, Flash, or any other supported playback technologies.</summary>
+  <summary>Brightcove Player APIを使用すると、ブラウザがHTML5ビデオやその他のサポートされている再生技術のどちらを利用してビデオを再生していても、JavaScriptを使ってビデオとやり取りすることができます。</summary>
   <section id="Referencing_the_player" class="bcls-section">
     <h2>プレーヤーを参照する</h2>
-    <p>API 関数を使用するには、プレーヤーオブジェクトにアクセスする必要があります。これは簡単です。動画タグにIDがあることを確認するだけです。埋め込みコードの例には ID があり<code translate="No">myPlayerID</code>、Player <code translate="No">myPlayer</code>オブジェクトは変数に格納されます。1 ページに複数の動画がある場合は、すべての動画タグに一意の ID があることを確認してください。</p>
+    <p>API機能を使用するには、プレーヤーオブジェクトへのアクセスが必要です。これは簡単に行えます。video タグにIDが設定されていることを確認するだけです。以下の例では、埋め込みコードのIDは<code translate="No">myPlayerID</code>であり、プレーヤーオブジェクトは <code translate="No">myPlayer</code> 変数に格納されます。ページに複数の動画がある場合は、各 video タグにユニークなIDを設定してください。</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">var myPlayer = videojs.getPlayer('myPlayerID');</code></pre>
   </section>
   <section class="bcls-section" id="waittilready">
     <h2>プレーヤー準備方法</h2>
-    <p>Video.js がビデオと API をセットアップするのにかかる時間は、接続速度などの複数の要因によって異なります。そのため、<code translate="No">ready()</code>プレーヤーのメソッドを使用して、プレーヤーの API を必要とするコードをトリガーします。</p>
+    <p>Video.js がビデオと API をセットアップするのにかかる時間は、接続速度などの複数の要因によって異なります。そのため、プレーヤーの<code translate="No">ready()</code>メソッドを使用して、プレーヤーの API を必要とするコードをトリガーします。</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.getPlayer('myPlayerID').<span class="bcls-highlight">ready(function() {</span>
   var myPlayer = this;
@@ -657,8 +657,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   myPlayer.on('loadstart',doLoadstart);
 
 });</code></pre>
-    <aside class="bcls-aside bcls-aside--information">上記のコードは、<code translate="No">getPlayer()</code><code translate="No">ready()</code>実際にはおよびメソッドの両方を最初の単一行のコードに結合しています。次に、を割り当てます<code translate="No">myPlayer</code>値を可変<code translate="No">this</code>、これはプレーヤーインスタンスです。選択した場合は、ここに示す代替方法も使用できますが、上記のコードはより一般的です。
-      <pre class="line-numbers">
+<aside class="bcls-aside bcls-aside--information">上記のコードは、実際に<code translate="No">getPlayer()</code>と<code translate="No">ready()</code>メソッドを最初の1行のコードに組み合わせています。その後、<code translate="No">myPlayer</code>変数に<code translate="No">this</code>（プレーヤーインスタンス）を代入しています。こちらで示されている代替方法も使用できますが、上記のコードの方が一般的です。
+<!-- <aside class="bcls-aside bcls-aside--information">上記のコードは、<code translate="No">getPlayer()</code><code translate="No">ready()</code>実際にはおよびメソッドの両方を最初の単一行のコードに結合しています。次に、を割り当てます<code translate="No">myPlayer</code>値を可変<code translate="No">this</code>、これはプレーヤーインスタンスです。選択した場合は、ここに示す代替方法も使用できますが、上記のコードはより一般的です。 -->
+  <pre class="line-numbers">
 <code class="language-javascript" translate="No">var myPlayer = videojs.getPlayer('myPlayerID');
 <span class="bcls-highlight">myPlayer.ready</span>(function(){
 
@@ -667,15 +668,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 });</code></pre>
     </aside>
-    <h3>プレーヤー対応vs.プレーヤー対応のビデオ</h3>
-    <p>このドキュメントの関連事項から、これはAPIの安全な使用であると考えるかもしれません。</p>
+    <h3>プレーヤーの準備と、プレーヤー準備後のビデオ</h3>
+    <p>このドキュメントで説明された内容から、これがAPIの安全な使用法だと思われるかもしれません。</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.getPlayer('myPlayerID').ready(function() {
   var myPlayer = this;
   // Play the video in the player
   myPlayer.play()
 });</code></pre>
-    <p>プレーヤーがインタラクションの準備ができているという問題は、プレーヤーのビデオがロードされ、この例では再生される準備ができていることを保証するものではありません。このため、<code translate="No">loadedmetadata</code>ビデオを再生する準備ができていることを保証するイベントを使用する必要があります。コードは次のように表示されます。</p>
+    <p>問題は、プレーヤーがインタラクションの準備ができているからといって、ビデオが読み込まれて再生できる状態になっているわけではないことです。このため、ビデオが再生準備完了であることを保証する<code translate="No">loadedmetadata</code>イベントを使用する必要があります。コードは次のようになります。</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.getPlayer('myPlayerID').ready(function() {
   var myPlayer = this;
@@ -684,7 +685,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     myPlayer.play();
   })
 });</code></pre>
-    <p><code translate="No">play()</code>メソッドを呼び出すことが関数で実行する唯一のタスクであり、別の方法でプレーヤーと対話するつもりがない場合、このコードを簡略化することができます（<code translate="No">ready()</code>メソッド):</p>
+    <p>もし<code translate="No">play()</code>メソッドを呼び出すことだけが関数内で行うタスクであり、他の方法でプレーヤーとインタラクションしないのであれば、このコードは次のように簡略化できます（<code translate="No">ready()</code>メソッドを使用する必要はありません）</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.getPlayer('myPlayerID').on('loadedmetadata',function(){
   var myPlayer = this;
@@ -693,7 +694,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section" id="methods">
     <h2>API メソッド</h2>
-    <p>準備ができたプレーヤーにアクセスできるので、ビデオを制御したり、値を取得したり、ビデオイベントに応答したりできます。Video.js API 関数名は、<a href="https://html.spec.whatwg.org/#the-video-element">  HTML5 メディア API に従います</a>。主な違いは、ゲッター/セッター関数がビデオプロパティに使用されることです。</p>
+    <p>これでプレーヤーの準備が完了したので、ビデオの制御や値の取得、ビデオイベントへの対応が可能になりました。Video.jsのAPI関数名は<a href="https://html.spec.whatwg.org/#the-video-element">HTML5 メディア API</a>に従っています。主な違いは、ビデオプロパティにはgetter/setter関数が使用されることです。</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">// setting a property on a bare HTML5 video element
 myVideoElement.currentTime = "120";
